@@ -364,3 +364,88 @@ def test_status_text(rig):
 
 def test_list_cams_keeps_order(rig):
     assert [c.id for c in rig.app.list_cams()] == ["a", "zug", "earth"]
+
+
+# ---- found by the final review ------------------------------------------------
+
+def test_cache_does_not_grow_while_the_desktop_cannot_be_set(rig):
+    rig.app.use("a")
+    rig.desktop.fail = True
+    for n in range(6):
+        rig.fetcher.responses[A_URL] = Fetched("ok", JPEG + bytes([n]), "V1")
+        rig.clock.advance(minutes=6)
+        rig.app.refresh()
+    assert len(rig.frames()) <= KEEP_FRAMES
+    rig.desktop.fail = False
+    assert Path(rig.uri.removeprefix("file://")).exists()      # the frame still shown was kept
+
+
+def test_off_can_be_retried_after_a_failed_restore(rig):
+    rig.app.use("a")
+    rig.desktop.fail = True
+    with pytest.raises(UserError, match="could not be restored"):
+        rig.app.off()
+    rig.desktop.fail = False
+    rig.app.off()
+    assert rig.uri == "file:///photo.jpg" and rig.state.saved is None
+
+
+def test_off_after_lost_state_says_so_every_time(rig):
+    rig.app.use("a")
+    rig.paths.state_file.write_text("")
+    for _ in range(2):
+        with pytest.raises(UserError, match="no saved wallpaper"):
+            rig.app.off()
+
+
+def test_original_is_on_disk_before_the_wallpaper_is_touched(rig):
+    class Boom(BaseException):
+        pass
+
+    def crash(url, validator=None):
+        raise Boom()                       # stands in for the process dying mid-fetch
+
+    rig.fetcher.get = crash
+    with pytest.raises(Boom):
+        rig.app.use("a")
+    assert rig.state.saved["picture-uri"] == "file:///photo.jpg"
+    rig.app.off()
+    assert rig.uri == "file:///photo.jpg"
+
+
+def test_refresh_survives_a_timestamp_without_a_zone(rig):
+    rig.app.use("a")
+    state = rig.state
+    state.fetched_at = "2026-11-17T22:03:00"
+    save_state(rig.paths.state_file, state)
+    rig.fetcher.calls.clear()
+    rig.clock.advance(minutes=1)
+    rig.app.refresh()
+    assert rig.fetcher.calls == [(A_URL, "V1")]
+
+
+def test_refresh_survives_an_unexpected_failure(rig):
+    rig.app.use("a")
+    rig.fetcher.responses[A_URL] = UnicodeError("label too long")
+    rig.clock.advance(minutes=6)
+    rig.app.refresh()
+    assert "label too long" in rig.state.last_error
+
+
+def test_refresh_when_never_used_creates_nothing(rig, tmp_path):
+    rig.app.refresh()
+    assert list(tmp_path.iterdir()) == []
+
+
+def test_use_creates_both_directories_even_if_the_fetch_fails(rig):
+    rig.fetcher.responses[A_URL] = FetchError("down")
+    rig.app.use("a")
+    assert rig.paths.cache_dir.is_dir() and rig.paths.state_file.parent.is_dir()
+
+
+def test_use_and_offset_return_the_problem_if_the_frame_could_not_be_fetched(rig):
+    assert rig.app.use("a") is None
+    rig.fetcher.responses[A_URL] = FetchError("could not reach a.example")
+    assert "could not reach" in rig.app.use("a")
+    assert rig.app.use("zug") is None
+    assert "no frame" in rig.app.set_offset(1)

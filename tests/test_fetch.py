@@ -168,3 +168,18 @@ def test_timeout_becomes_fetch_error():
     f, _ = fetcher(TimeoutError("slow"))
     with pytest.raises(FetchError):
         f.get(URL)
+
+
+def test_redirect_handler_refuses_another_port():
+    req = urllib.request.Request(URL)
+    with pytest.raises(FetchError):
+        SameHostRedirect().redirect_request(req, None, 302, "Found", {}, "https://a.example:8443/x.jpg")
+
+
+def test_default_opener_checks_redirects_and_ignores_proxy_settings(monkeypatch):
+    monkeypatch.setenv("https_proxy", "http://proxy.example:3128")
+    monkeypatch.setenv("HTTPS_PROXY", "http://proxy.example:3128")
+    handlers = HttpFetcher(HOSTS, "ua")._opener.handlers
+    redirects = [h for h in handlers if isinstance(h, urllib.request.HTTPRedirectHandler)]
+    assert [type(h) for h in redirects] == [SameHostRedirect]
+    assert not any(getattr(h, "proxies", None) for h in handlers)

@@ -51,3 +51,30 @@ def test_broken_cam_list_exits_2(env, capsys):
     (env / "cams.json").write_text("[")
     assert main(["status"]) == 2
     assert "cams.json" in capsys.readouterr().err
+
+
+def test_off_works_with_a_broken_cam_list(env, capsys):
+    (env / "cams.json").write_text("[")
+    assert main(["off"]) == 0
+
+
+def test_use_reports_a_frame_that_could_not_be_fetched(monkeypatch, capsys):
+    class Stub:
+        def use(self, cam):
+            return "could not reach a.example"
+
+    from live_wallpaper import cli
+    monkeypatch.setattr(cli, "_build_app", lambda **kw: Stub())
+    assert main(["use", "a"]) == 1
+    assert "could not reach a.example" in capsys.readouterr().err
+
+
+def test_refresh_never_prints_a_traceback(monkeypatch, capsys):
+    class Stub:
+        def refresh(self):
+            raise OSError("disk full")
+
+    from live_wallpaper import cli
+    monkeypatch.setattr(cli, "_build_app", lambda **kw: Stub())
+    assert main(["refresh"]) == 1
+    assert capsys.readouterr().err == "live-wallpaper: disk full\n"

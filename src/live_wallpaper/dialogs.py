@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import subprocess
+from xml.sax.saxutils import escape
 
 from .cams import Cam
 
@@ -34,7 +35,7 @@ def pick_cam(cams: list[Cam], current: str | None, run=subprocess.run) -> str | 
 
 
 def pick_offset(cam: Cam, current: int, run=subprocess.run) -> int | None:
-    answer = _zenity(["--scale", "--title=Time offset", f"--text={cam.name}: hours behind live",
+    answer = _zenity(["--scale", "--title=Time offset", f"--text={escape(cam.name)}: hours behind live",
                       "--min-value=0", "--max-value=23", f"--value={current}", "--step=1"], run)
     try:
         return int(answer) if answer is not None else None
@@ -43,4 +44,4 @@ def pick_offset(cam: Cam, current: int, run=subprocess.run) -> int | None:
 
 
 def show_message(text: str, run=subprocess.run) -> None:
-    _zenity(["--info", "--title=Live wallpaper", f"--text={text}"], run)
+    _zenity(["--info", "--no-markup", "--title=Live wallpaper", f"--text={text}"], run)

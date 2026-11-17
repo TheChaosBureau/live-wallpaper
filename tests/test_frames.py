@@ -62,3 +62,14 @@ def test_interval_and_size_come_from_the_cam():
     c = dataclasses.replace(ZUG, interval_minutes=30, size="hu")
     got = candidates(c, 0, datetime(2026, 11, 17, 11, 44, tzinfo=UTC))
     assert got[0].url.endswith("/2026/11/17/1230_hu.jpg") and got[1].key == "2026/11/17/1200"
+
+
+def test_offset_is_real_hours_across_the_spring_change():
+    # Europe starts summer time 2026-03-29 01:00 UTC
+    got = candidates(ZUG, 9, datetime(2026, 3, 29, 5, 0, tzinfo=UTC))
+    assert got[0].key == "2026/03/28/2100"
+
+
+def test_stepping_back_over_the_spring_gap_skips_the_hour_that_does_not_exist():
+    got = candidates(ZUG, 0, datetime(2026, 3, 29, 1, 5, tzinfo=UTC))    # 03:05 CEST
+    assert [c.key for c in got[:2]] == ["2026/03/29/0300", "2026/03/29/0150"]

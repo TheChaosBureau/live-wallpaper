@@ -57,9 +57,27 @@ in
       serviceConfig = {
         Type = "oneshot";
         ExecStart = "${lib.getExe cfg.package} refresh";
-        NoNewPrivileges = true;
         Nice = 19;
         TimeoutStartSec = 120;
+
+        # The job fetches a file from the internet, so it gets as little as a
+        # user unit can be given: the system and the home directory are
+        # read-only except for its own two directories and the runtime
+        # directory (the settings service keeps a small file there). Changing
+        # the wallpaper itself goes over the session bus, not through files.
+        NoNewPrivileges = true;
+        ProtectSystem = "strict";
+        ProtectHome = "read-only";
+        ReadWritePaths = [ "-%h/.cache/live-wallpaper" "-%h/.local/state/live-wallpaper" "-%t" ];
+        PrivateTmp = true;
+        RestrictAddressFamilies = [ "AF_UNIX" "AF_INET" "AF_INET6" ];
+        RestrictNamespaces = true;
+        RestrictRealtime = true;
+        RestrictSUIDSGID = true;
+        LockPersonality = true;
+        MemoryDenyWriteExecute = true;
+        SystemCallArchitectures = "native";
+        UMask = "0077";
       };
     };
 

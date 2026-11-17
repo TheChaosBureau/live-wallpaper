@@ -90,3 +90,17 @@ def test_cli_pick_offset_on_a_cam_without_archive_shows_a_message(env, monkeypat
     monkeypatch.setattr(dialogs, "pick_offset", lambda cam, current: pytest.fail("must not ask"))
     assert cli.main(["pick-offset"]) == 0
     assert shown == ["Cam A has no archive, so it can only be shown live"]
+
+
+def test_messages_are_not_parsed_as_markup():
+    run = Run()
+    dialogs.show_message("Zell & Kaprun <down>", run)
+    assert "--no-markup" in run.calls[0] and "--text=Zell & Kaprun <down>" in run.calls[0]
+
+
+def test_cam_name_is_escaped_in_the_offset_dialog():
+    (cam,) = parse_cams([{"id": "z", "name": "Zell & Kaprun", "kind": "foto-webcam",
+                          "url": "https://www.foto-webcam.eu", "cam": "z"}])
+    run = Run("3\n")
+    dialogs.pick_offset(cam, 0, run)
+    assert "--text=Zell &amp; Kaprun: hours behind live" in run.calls[0]

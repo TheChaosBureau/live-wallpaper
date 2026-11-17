@@ -36,7 +36,8 @@ class App:
 
     # ---- what the user does -------------------------------------------------
 
-    def use(self, cam_id: str) -> None:
+    def use(self, cam_id: str) -> str | None:
+        """Show this cam. Returns the problem if its frame could not be fetched."""
         if cam_id not in self._cams:
             known = ", ".join(self._cams) or "none configured"
             raise UserError(f"There is no cam called {cam_id!r}. Cams: {known}")
@@ -48,8 +49,11 @@ class App:
             state.cam = cam_id
             self._forget_frame(state)
             state.frame_time = None
+            self._paths.cache_dir.mkdir(parents=True, exist_ok=True)
+            self._save(state)  # the original wallpaper is on disk before anything changes
             self._refresh(state)
             self._save(state)
+            return state.last_error
 
     def offset_cam(self, state: State | None = None) -> Cam:
         """The current cam, if its time offset can be set; UserError if not."""
@@ -63,7 +67,8 @@ class App:
             raise UserError(f"{cam.name} has no archive, so it can only be shown live")
         return cam
 
-    def set_offset(self, hours: int) -> None:
+    def set_offset(self, hours: int) -> str | None:
+        """Set the current cam's offset. Returns the problem if no frame could be fetched."""
         with self._lock(wait=True):
             state = self._load()
             cam = self.offset_cam(state)
@@ -73,11 +78,14 @@ class App:
             self._forget_frame(state)
             self._refresh(state)
             self._save(state)
+            return state.last_error
 
     def off(self) -> None:
+        if not self._paths.state_file.parent.exists() and not self._paths.cache_dir.exists():
+            return  # never used
         with self._lock(wait=True):
             state = self._load()
-            if not state.on:
+            if not state.on and state.saved is None and not self._showing_our_frame():
                 return
             state.on = False
             self._forget_frame(state)
@@ -91,13 +99,16 @@ class App:
                             self._desktop.set(key, saved[key])
                     state.saved = None
                 except DesktopError as exc:
-                    problem = f"Cams are off, but the previous wallpaper could not be restored: {exc}"
+                    problem = (f"Cams are off, but the previous wallpaper could not be restored: {exc}. "
+                               "Try again.")
             self._save(state)
             if problem:
                 raise UserError(problem)
 
     def refresh(self) -> None:
         """Called by the timer. Never raises for fetch or desktop failures."""
+        if not self._load().on:
+            return  # nothing to do, and nothing created for users who never use it
         with self._lock(wait=False) as held:
             if not held:
                 return
@@ -175,6 +186,12 @@ class App:
         state.validator = None
         state.fetched_at = None
 
+    def _showing_our_frame(self) -> bool:
+        try:
+            return self._desktop.get("picture-uri").startswith(self._paths.cache_dir.as_uri())
+        except DesktopError:
+            return False
+
     def _read_original(self) -> dict[str, str] | None:
         try:
             original = {key: self._desktop.get(key) for key in KEYS}
@@ -188,8 +205,8 @@ class App:
     def _refresh(self, state: State) -> None:
         try:
             self._refresh_or_raise(state)
-        except (FetchError, DesktopError, OSError) as exc:
-            state.last_error = str(exc)
+        except Exception as exc:  # the timer must never fail for a fetch or desktop problem
+            state.last_error = str(exc) or type(exc).__name__
 
     def _refresh_or_raise(self, state: State) -> None:
         cam = self._cams.get(state.cam or "")
@@ -199,7 +216,7 @@ class App:
         if cam.kind == "latest" and state.fetched_at:
             try:
                 age = now - datetime.fromisoformat(state.fetched_at)
-            except ValueError:
+            except (ValueError, TypeError):  # unreadable, or written without a time zone
                 age = None
             if age is not None and timedelta(0) <= age < timedelta(minutes=cam.interval_minutes) - _INTERVAL_SLACK:
                 return
@@ -222,10 +239,15 @@ class App:
                 continue
             if fetched.status == "ok" and not self._same_as_shown(state, fetched.data or b""):
                 path = self._write_frame(cam, fetched.data or b"", now)
-                uri = path.as_uri()
-                self._desktop.set("picture-uri", uri)
-                self._desktop.set("picture-uri-dark", uri)
-                self._desktop.set("picture-options", cam.fit)
+                try:
+                    uri = path.as_uri()
+                    self._desktop.set("picture-uri", uri)
+                    self._desktop.set("picture-uri-dark", uri)
+                    self._desktop.set("picture-options", cam.fit)
+                except BaseException:
+                    # not shown, so do not keep it; whatever is shown now stays on disk
+                    self._prune(self._shown_file(), drop=path)
+                    raise
                 state.shown_path = str(path)
                 self._prune(path)
             if fetched.status == "ok":
@@ -273,7 +295,26 @@ class App:
             raise
         return path
 
-    def _prune(self, current: Path) -> None:
+    def _shown_file(self) -> Path | None:
+        """The cache file the desktop is pointing at right now, if it is one of ours."""
+        try:
+            uri = self._desktop.get("picture-uri")
+        except DesktopError:
+            return None
+        prefix = self._paths.cache_dir.as_uri() + "/"
+        if not uri.startswith(prefix):
+            return None
+        return self._paths.cache_dir / Path(uri[len(prefix):]).name
+
+    def _prune(self, current: Path | None, drop: Path | None = None) -> None:
+        """Keep `current` and the newest other frames, KEEP_FRAMES in all; delete `drop`."""
+        for path in ([drop] if drop else []):
+            try:
+                path.unlink()
+            except OSError:
+                pass
+        if current is None:
+            return
         others = sorted((p for p in self._paths.cache_dir.glob("*.jpg") if p != current),
                         key=lambda p: (p.stat().st_mtime_ns, p.name), reverse=True)
         for old in others[KEEP_FRAMES - 1:]:

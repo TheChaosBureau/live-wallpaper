@@ -38,10 +38,15 @@ def _parser() -> argparse.ArgumentParser:
     return parser
 
 
-def _build_app() -> App:
+def _build_app(need_cams: bool = True) -> App:
     override = os.environ.get("LIVE_WALLPAPER_CAMS")
     paths = [Path(p) for p in override.split(":") if p] if override else default_cam_paths()
-    cams = load_cams(paths)
+    try:
+        cams = load_cams(paths)
+    except CamError:
+        if need_cams:
+            raise
+        cams = {}  # "off" must work even when a cam file is broken
     return App(
         cams=cams,
         paths=Paths.from_env(os.environ),
@@ -51,11 +56,20 @@ def _build_app() -> App:
     )
 
 
+class _NotFetched(Exception):
+    """The cam or offset was set, but its frame could not be fetched."""
+
+
+def _fetched(problem: str | None) -> None:
+    if problem:
+        raise _NotFetched(f"That is set, but the picture could not be fetched yet: {problem}")
+
+
 def _run(app: App, args: argparse.Namespace) -> None:
     if args.command == "use":
-        app.use(args.cam)
+        _fetched(app.use(args.cam))
     elif args.command == "offset":
-        app.set_offset(args.hours)
+        _fetched(app.set_offset(args.hours))
     elif args.command == "off":
         app.off()
     elif args.command == "status":
@@ -69,12 +83,12 @@ def _run(app: App, args: argparse.Namespace) -> None:
         current, _ = app.current()
         chosen = dialogs.pick_cam(app.list_cams(), current.id if current else None)
         if chosen is not None:
-            app.use(chosen)
+            _fetched(app.use(chosen))
     elif args.command == "pick-offset":
         cam = app.offset_cam()
         hours = dialogs.pick_offset(cam, app.current()[1])
         if hours is not None:
-            app.set_offset(hours)
+            _fetched(app.set_offset(hours))
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -84,8 +98,8 @@ def main(argv: list[str] | None = None) -> int:
         return exc.code if isinstance(exc.code, int) else 2
     gui = args.gui or args.command in ("pick", "pick-offset")
     try:
-        _run(_build_app(), args)
-    except (UserError, CamError, dialogs.DialogError) as exc:
+        _run(_build_app(need_cams=args.command != "off"), args)
+    except (UserError, CamError, _NotFetched, dialogs.DialogError) as exc:
         if gui and not isinstance(exc, dialogs.DialogError):
             try:
                 dialogs.show_message(str(exc))
@@ -93,7 +107,12 @@ def main(argv: list[str] | None = None) -> int:
             except dialogs.DialogError:
                 pass
         print(f"live-wallpaper: {exc}", file=sys.stderr)
-        return 2
+        return 1 if isinstance(exc, _NotFetched) else 2
+    except Exception as exc:
+        if args.command != "refresh":
+            raise
+        print(f"live-wallpaper: {exc}", file=sys.stderr)  # one line in the journal, no traceback
+        return 1
     return 0
 
 

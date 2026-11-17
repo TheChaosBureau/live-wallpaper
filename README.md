@@ -112,7 +112,11 @@ zones east of you follows your day: its sunrise arrives with yours.
   other host are refused.
 - A download is used only if it is a JPEG and at most 25 MB.
 - It runs as you, with no extra privileges, and sends a generic client name
-  (`live-wallpaper/<version>`) and nothing about you.
+  (`live-wallpaper/<version>`) and nothing about you. Proxy settings in the
+  environment are ignored.
+- The timer's job runs sandboxed: the system and your home directory are
+  read-only to it, except its own cache and state directories. The sandbox
+  paths assume the default XDG locations.
 - If a fetch fails, the current frame stays and nothing pops up; `status` shows
   the last error.
 - The lock-screen image is never touched.

@@ -29,6 +29,11 @@ in
 assert lib.assertMsg (timer.timerConfig.OnCalendar == "*:0/5") "timer period";
 assert lib.assertMsg (timer.wantedBy == [ "timers.target" ]) "timer is enabled";
 assert lib.assertMsg (lib.hasSuffix "/bin/live-wallpaper refresh" service.serviceConfig.ExecStart) "service command";
+assert lib.assertMsg (service.serviceConfig.ProtectHome == "read-only") "home is read-only";
+assert lib.assertMsg (service.serviceConfig.ProtectSystem == "strict") "system is read-only";
+assert lib.assertMsg (service.serviceConfig.NoNewPrivileges) "no new privileges";
+assert lib.assertMsg (builtins.elem "-%h/.cache/live-wallpaper" service.serviceConfig.ReadWritePaths) "cache is writable";
+assert lib.assertMsg (builtins.elem "-%h/.local/state/live-wallpaper" service.serviceConfig.ReadWritePaths) "state is writable";
 assert lib.assertMsg (failedAssertions good == [ ]) "a good config has no failed assertions";
 assert lib.assertMsg (builtins.length (failedAssertions duplicate) == 1) "duplicate ids are refused";
 assert lib.assertMsg (!(eval [ ]).environment.etc ? "live-wallpaper/cams.json") "no file without cams";

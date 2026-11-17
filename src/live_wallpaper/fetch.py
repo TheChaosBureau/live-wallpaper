@@ -48,7 +48,11 @@ class SameHostRedirect(urllib.request.HTTPRedirectHandler):
 
     def redirect_request(self, req, fp, code, msg, headers, newurl):
         old, new = urlsplit(req.full_url), urlsplit(newurl)
-        if new.scheme != "https" or new.hostname != old.hostname:
+        try:
+            same_port = (new.port or 443) == (old.port or 443)
+        except ValueError:
+            same_port = False
+        if new.scheme != "https" or new.hostname != old.hostname or not same_port:
             raise FetchError(f"refused a redirect from {old.hostname} to {newurl}")
         return super().redirect_request(req, fp, code, msg, headers, newurl)
 
@@ -57,7 +61,9 @@ class HttpFetcher:
     def __init__(self, allowed_hosts: frozenset[str], user_agent: str, opener=None):
         self._hosts = allowed_hosts
         self._user_agent = user_agent
-        self._opener = opener or urllib.request.build_opener(SameHostRedirect())
+        # No proxies, whatever the environment says: requests go to the listed hosts only.
+        self._opener = opener or urllib.request.build_opener(
+            urllib.request.ProxyHandler({}), SameHostRedirect())
 
     def _check_url(self, url: str) -> str:
         parts = urlsplit(url)
@@ -88,7 +94,7 @@ class HttpFetcher:
             raise FetchError(f"{host} answered {exc.code}", status=exc.code) from exc
         except FetchError:
             raise
-        except (urllib.error.URLError, OSError, http.client.HTTPException) as exc:
+        except (urllib.error.URLError, OSError, http.client.HTTPException, UnicodeError) as exc:
             reason = getattr(exc, "reason", exc)
             raise FetchError(f"could not reach {host}: {reason}") from exc
         if len(data) > MAX_BYTES:
