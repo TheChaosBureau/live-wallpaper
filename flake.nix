@@ -17,6 +17,9 @@
         nativeCheckInputs = [ pkgs.python3Packages.pytestCheckHook ];
         makeWrapperArgs = [
           "--prefix" "PATH" ":" (pkgs.lib.makeBinPath [ pkgs.glib pkgs.zenity ])
+          # gsettings needs the schema that holds the wallpaper keys
+          "--prefix" "XDG_DATA_DIRS" ":"
+          "${pkgs.gsettings-desktop-schemas}/share/gsettings-schemas/${pkgs.gsettings-desktop-schemas.name}"
         ];
         meta = {
           description = "Show a manually chosen webcam's latest frame as the GNOME wallpaper";

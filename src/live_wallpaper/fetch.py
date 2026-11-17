@@ -16,7 +16,15 @@ _JPEG_MAGIC = b"\xff\xd8\xff"
 
 
 class FetchError(Exception):
-    """A frame could not be fetched, or what came back is not usable."""
+    """A frame could not be fetched, or what came back is not usable.
+
+    ``status`` is the HTTP status when the server answered with an error code,
+    and None for everything else (network failure, refused URL, bad content).
+    """
+
+    def __init__(self, message: str, status: int | None = None):
+        super().__init__(message)
+        self.status = status
 
 
 @dataclass
@@ -77,7 +85,7 @@ class HttpFetcher:
                 return Fetched("unchanged", None, validator)
             if exc.code == 404:
                 return Fetched("missing", None, None)
-            raise FetchError(f"{host} answered {exc.code}") from exc
+            raise FetchError(f"{host} answered {exc.code}", status=exc.code) from exc
         except FetchError:
             raise
         except (urllib.error.URLError, OSError, http.client.HTTPException) as exc:

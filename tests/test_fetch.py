@@ -88,10 +88,11 @@ def test_404_is_missing():
     assert f.get(URL).status == "missing"
 
 
-def test_500_raises_fetch_error():
-    f, _ = fetcher(http_error(500))
-    with pytest.raises(FetchError):
+def test_500_raises_fetch_error_carrying_the_status():
+    f, _ = fetcher(http_error(502))
+    with pytest.raises(FetchError) as exc:
         f.get(URL)
+    assert exc.value.status == 502
 
 
 def test_http_scheme_refused_before_any_request():
@@ -156,10 +157,11 @@ def test_body_over_limit_rejected_without_reading_it_all():
     assert r._body.asked <= MAX_BYTES + 1
 
 
-def test_network_error_becomes_fetch_error():
+def test_network_error_becomes_fetch_error_without_a_status():
     f, _ = fetcher(urllib.error.URLError("no route"))
-    with pytest.raises(FetchError):
+    with pytest.raises(FetchError) as exc:
         f.get(URL)
+    assert exc.value.status is None
 
 
 def test_timeout_becomes_fetch_error():
