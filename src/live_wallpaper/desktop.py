@@ -45,6 +45,9 @@ class GSettingsDesktop:
             raise DesktopError(f"could not run gsettings: {exc}") from exc
         if done.returncode != 0:
             raise DesktopError(f"gsettings failed: {(done.stderr or '').strip() or done.returncode}")
+        if "'memory' GSettings backend" in (done.stderr or ""):
+            # gsettings exits 0 here but nothing reaches the desktop
+            raise DesktopError("gsettings is not connected to the desktop settings (no dconf backend)")
         return done.stdout or ""
 
     def get(self, key: str) -> str:

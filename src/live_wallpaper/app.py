@@ -51,16 +51,22 @@ class App:
             self._refresh(state)
             self._save(state)
 
+    def offset_cam(self, state: State | None = None) -> Cam:
+        """The current cam, if its time offset can be set; UserError if not."""
+        state = state or self._load()
+        if not state.on or state.cam is None:
+            raise UserError("Cams are off. Pick a cam first.")
+        cam = self._cams.get(state.cam)
+        if cam is None:
+            raise UserError(f"The cam {state.cam!r} is not in the cam list. Pick another cam.")
+        if not cam.supports_offset:
+            raise UserError(f"{cam.name} has no archive, so it can only be shown live")
+        return cam
+
     def set_offset(self, hours: int) -> None:
         with self._lock(wait=True):
             state = self._load()
-            if not state.on or state.cam is None:
-                raise UserError("Cams are off. Pick a cam first.")
-            cam = self._cams.get(state.cam)
-            if cam is None:
-                raise UserError(f"The cam {state.cam!r} is not in the cam list. Pick another cam.")
-            if not cam.supports_offset:
-                raise UserError(f"{cam.name} has no archive, so it can only be shown live")
+            cam = self.offset_cam(state)
             if not 0 <= hours <= 23:
                 raise UserError("The time offset must be a whole number of hours from 0 to 23.")
             state.offsets[cam.id] = hours

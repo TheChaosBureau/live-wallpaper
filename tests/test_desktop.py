@@ -7,14 +7,15 @@ from live_wallpaper.desktop import KEYS, DesktopError, GSettingsDesktop
 
 
 class Run:
-    def __init__(self, stdout="", returncode=0, error=None):
+    def __init__(self, stdout="", returncode=0, error=None, stderr=""):
         self.stdout, self.returncode, self.error, self.calls = stdout, returncode, error, []
+        self.stderr = stderr
 
     def __call__(self, argv, **kwargs):
         self.calls.append(argv)
         if self.error:
             raise self.error
-        return subprocess.CompletedProcess(argv, self.returncode, self.stdout, "boom")
+        return subprocess.CompletedProcess(argv, self.returncode, self.stdout, self.stderr)
 
 
 def test_keys():
@@ -45,3 +46,15 @@ def test_nonzero_exit_raises_desktop_error():
 def test_missing_gsettings_raises_desktop_error():
     with pytest.raises(DesktopError):
         GSettingsDesktop(Run(error=FileNotFoundError("gsettings"))).set("picture-uri", "x")
+
+
+MEMORY_WARNING = ("(process:1): GLib-GIO-WARNING **: Using the 'memory' GSettings backend.  "
+                  "Your settings will not be saved or shared with other applications.\n")
+
+
+def test_memory_backend_is_an_error_not_a_silent_no_op():
+    # without the dconf module gsettings exits 0 and changes nothing
+    with pytest.raises(DesktopError, match="not connected"):
+        GSettingsDesktop(Run(stderr=MEMORY_WARNING)).set("picture-uri", "file:///a.jpg")
+    with pytest.raises(DesktopError):
+        GSettingsDesktop(Run("'x'\n", stderr=MEMORY_WARNING)).get("picture-uri")

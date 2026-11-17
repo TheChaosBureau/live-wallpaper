@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Set time offset…
+Comment=Show the current cam some hours behind live
+Exec=live-wallpaper pick-offset
+Icon=preferences-desktop-wallpaper
+Terminal=false
+Categories=Utility;
+Keywords=cam;webcam;wallpaper;live;
