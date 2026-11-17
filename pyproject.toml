@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "live-wallpaper"
+version = "0.1.0"
+description = "Show a manually chosen webcam's latest frame as the GNOME wallpaper."
+license = "Apache-2.0"
+requires-python = ">=3.11"
+
+[project.scripts]
+live-wallpaper = "live_wallpaper.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+live_wallpaper = ["data/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "tests"]

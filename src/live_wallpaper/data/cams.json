@@ -1,0 +1,18 @@
+[
+  {
+    "id": "earth-west",
+    "name": "Earth from GOES West",
+    "kind": "latest",
+    "url": "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/FD/GEOCOLOR/1808x1808.jpg",
+    "interval_minutes": 10,
+    "fit": "scaled"
+  },
+  {
+    "id": "earth-east",
+    "name": "Earth from GOES East",
+    "kind": "latest",
+    "url": "https://cdn.star.nesdis.noaa.gov/GOES19/ABI/FD/GEOCOLOR/1808x1808.jpg",
+    "interval_minutes": 10,
+    "fit": "scaled"
+  }
+]
