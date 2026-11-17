@@ -17,3 +17,21 @@ class FakeFetcher:
         if isinstance(response, Exception):
             raise response
         return response
+
+
+class FakeDesktop:
+    def __init__(self, values):
+        self.values = values
+        self.fail = False
+
+    def get(self, key):
+        from live_wallpaper.desktop import DesktopError
+        if self.fail:
+            raise DesktopError("no session")
+        return self.values[key]
+
+    def set(self, key, value):
+        from live_wallpaper.desktop import DesktopError
+        if self.fail:
+            raise DesktopError("no session")
+        self.values[key] = value
