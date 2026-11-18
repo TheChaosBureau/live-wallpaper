@@ -7,7 +7,7 @@ import dataclasses
 import json
 import os
 import tempfile
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Mapping
 
@@ -30,7 +30,7 @@ class Paths:
 class State:
     on: bool = False
     cam: str | None = None
-    offsets: dict[str, int] = field(default_factory=dict)
+    offset: int = 0  # hours behind live, for every cam that has an archive
     saved: dict[str, str] | None = None
     shown_key: str | None = None
     shown_path: str | None = None
@@ -61,10 +61,16 @@ def _from_json(raw: object) -> State:
         if value is not None and not isinstance(value, str):
             raise ValueError(name)
         setattr(state, name, value)
-    offsets = raw.get("offsets", {})
-    if not isinstance(offsets, dict) or not all(isinstance(k, str) and _is_int(v) for k, v in offsets.items()):
-        raise ValueError("offsets")
-    state.offsets = dict(offsets)
+    if "offset" in raw:
+        if not _is_int(raw["offset"]):
+            raise ValueError("offset")
+        state.offset = raw["offset"]
+    else:
+        # Before 0.3 each cam had its own offset: carry over the chosen cam's.
+        offsets = raw.get("offsets", {})
+        if not isinstance(offsets, dict) or not all(isinstance(k, str) and _is_int(v) for k, v in offsets.items()):
+            raise ValueError("offsets")
+        state.offset = offsets.get(state.cam, 0)
     saved = raw.get("saved")
     if saved is not None:
         if not isinstance(saved, dict) or not all(

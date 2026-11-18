@@ -35,7 +35,6 @@ class Window(Gtk.ApplicationWindow):
         self._previewer = previewer
         self._request = 0       # the newest preview asked for; older answers are dropped
         self._slider_timer = 0
-        self._setting_slider = False
         self._busy = False
         self._rows: dict[str, Gtk.ListBoxRow] = {}
         self._marks: dict[str, Gtk.Image] = {}
@@ -92,6 +91,7 @@ class Window(Gtk.ApplicationWindow):
         root.append(right)
         self.set_child(root)
 
+        self.scale.set_value(app.offset())  # (nothing is selected yet, so this asks for no picture)
         self._mark_current()
         current, _ = app.current()
         first = self._rows.get(current.id) if current else self.listbox.get_row_at_index(0)
@@ -139,12 +139,9 @@ class Window(Gtk.ApplicationWindow):
             return
         cam = self._selected = row.cam
         self.title_label.set_label(cam.name)
-        self._setting_slider = True
-        self.scale.set_value(self._app.offset_of(cam.id))
-        self._setting_slider = False
+        # the slider keeps its value from cam to cam; only the user moves it
         self.scale.set_sensitive(cam.supports_offset)
-        self.hours_label.set_label(_hours_text(self.hours) if cam.supports_offset
-                                   else "Live only (no archive)")
+        self._show_hours()
         self.status_label.set_label("")
         self._load_preview()
 
@@ -154,10 +151,15 @@ class Window(Gtk.ApplicationWindow):
     def hours(self) -> int:
         return int(round(self.scale.get_value()))
 
+    def _show_hours(self) -> None:
+        cam = self._selected
+        self.hours_label.set_label(_hours_text(self.hours) if cam is None or cam.supports_offset
+                                   else "Live only (no archive)")
+
     def _on_scale(self, _scale) -> None:
-        if self._setting_slider or self._selected is None:
+        self._show_hours()
+        if self._selected is None:
             return
-        self.hours_label.set_label(_hours_text(self.hours))
         if self._slider_timer:
             GLib.source_remove(self._slider_timer)
         self._slider_timer = GLib.timeout_add(SLIDER_PAUSE_MS, self._slider_settled)
@@ -172,7 +174,8 @@ class Window(Gtk.ApplicationWindow):
             GLib.source_remove(self._slider_timer)
             self._slider_timer = 0
         self._request += 1
-        request, cam, hours = self._request, self._selected, self.hours
+        request, cam = self._request, self._selected
+        hours = self.hours if cam.supports_offset else 0
         self.spinner.start()
         self.frame_label.set_label("Loading…")
         self.set_button.set_sensitive(not self._busy)
@@ -212,10 +215,11 @@ class Window(Gtk.ApplicationWindow):
             return
 
         def work() -> str:
-            problem = self._app.use(cam.id, hours if cam.supports_offset else None)
+            problem = self._app.use(cam.id, hours)
             if problem:
                 return f"{cam.name} is set, but its picture could not be fetched yet: {problem}"
-            return f"Wallpaper set: {cam.name}" + (f", {_hours_text(hours).lower()}" if hours else "")
+            return f"Wallpaper set: {cam.name}" + (
+                f", {_hours_text(hours).lower()}" if hours and cam.supports_offset else "")
 
         self._change("Setting the wallpaper…", work)
 

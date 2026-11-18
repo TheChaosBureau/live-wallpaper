@@ -47,8 +47,9 @@ while you try things:
 
 - **Click a cam** to see its picture. Type in the search box to narrow the list
   (a place, a mountain, a country).
-- **Time offset** shows the cam some hours behind live, for cams that have an
-  archive.
+- **Time offset** shows cams some hours behind live. It is one setting: it
+  stays where you put it as you go from cam to cam, and cams with no archive
+  are simply shown live.
 - **Set as wallpaper** makes the cam and offset you are looking at the
   wallpaper. Nothing changes until you press it. A tick in the list marks the
   cam that is the wallpaper now.
@@ -64,7 +65,7 @@ Or from a terminal:
 ```
 live-wallpaper list            # the cams you can pick
 live-wallpaper use earth-west  # switch cams on and show this cam
-live-wallpaper offset 9        # show the current cam 9 hours behind (0 = live)
+live-wallpaper offset 9        # show cams 9 hours behind (0 = live)
 live-wallpaper status          # cam, offset, frame time, last error
 live-wallpaper off             # stop and restore the previous wallpaper
 live-wallpaper window          # open the settings window
@@ -176,7 +177,7 @@ part of a name (a place, a mountain, a country).
 
 | What | Where |
 |---|---|
-| State (cam, offsets, saved wallpaper) | `~/.local/state/live-wallpaper/state.json` |
+| State (cam, offset, saved wallpaper) | `~/.local/state/live-wallpaper/state.json` |
 | Frames (the newest two) | `~/.cache/live-wallpaper/` |
 | Your cams | `~/.config/live-wallpaper/cams.json` |
 | System cams (from the module) | `/etc/live-wallpaper/cams.json` |

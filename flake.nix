@@ -10,7 +10,7 @@
       forAll = f: nixpkgs.lib.genAttrs systems (system: f nixpkgs.legacyPackages.${system});
       mkPackage = pkgs: pkgs.python3Packages.buildPythonApplication {
         pname = "live-wallpaper";
-        version = "0.2.0";
+        version = "0.3.0";
         pyproject = true;
         src = self;
         build-system = [ pkgs.python3Packages.setuptools ];

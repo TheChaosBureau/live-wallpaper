@@ -23,8 +23,8 @@ KEEP_FRAMES = 2
 _INTERVAL_SLACK = timedelta(seconds=30)
 
 
-# Cam ids that changed between versions: old id -> new id. A chosen cam and its
-# offset follow the rename, unless the old id still names a cam.
+# Cam ids that changed between versions: old id -> new id. A chosen cam follows
+# the rename, unless the old id still names a cam.
 RENAMED = {
     "alps-grossglockner": "alps-freiwandeck",
     "alps-koenigssee": "alps-funtenseetauern",
@@ -50,7 +50,9 @@ class App:
     # ---- what the user does -------------------------------------------------
 
     def use(self, cam_id: str, hours: int | None = None) -> str | None:
-        """Show this cam, at this offset if one is given (else the one it had).
+        """Show this cam, and set the time offset if one is given (else it stays).
+
+        The offset is one setting for all cams; a cam with no archive is shown live.
 
         Returns the problem if its frame could not be fetched.
         """
@@ -61,16 +63,14 @@ class App:
         if hours is not None:
             if not 0 <= hours <= 23:
                 raise UserError("The time offset must be a whole number of hours from 0 to 23.")
-            if hours and not cam.supports_offset:
-                raise UserError(f"{cam.name} has no archive, so it can only be shown live")
         with self._lock(wait=True):
             state = self._load()
             if not state.on and state.saved is None:
                 state.saved = self._read_original()
             state.on = True
             state.cam = cam_id
-            if hours is not None and cam.supports_offset:
-                state.offsets[cam_id] = hours
+            if hours is not None:
+                state.offset = hours
             self._forget_frame(state)
             state.frame_time = None
             self._paths.cache_dir.mkdir(parents=True, exist_ok=True)
@@ -92,13 +92,13 @@ class App:
         return cam
 
     def set_offset(self, hours: int) -> str | None:
-        """Set the current cam's offset. Returns the problem if no frame could be fetched."""
+        """Set the time offset. Returns the problem if no frame could be fetched."""
         with self._lock(wait=True):
             state = self._load()
             cam = self.offset_cam(state)
             if not 0 <= hours <= 23:
                 raise UserError("The time offset must be a whole number of hours from 0 to 23.")
-            state.offsets[cam.id] = hours
+            state.offset = hours
             self._forget_frame(state)
             self._refresh(state)
             self._save(state)
@@ -152,7 +152,7 @@ class App:
             lines.append(f"Cam: {state.cam} (not in the cam list)")
         else:
             lines.append(f"Cam: {cam.name} ({cam.id})")
-            hours = state.offsets.get(cam.id, 0) if cam.supports_offset else 0
+            hours = state.offset if cam.supports_offset else 0
             if hours == 0:
                 lines.append("Offset: live")
             else:
@@ -172,14 +172,11 @@ class App:
         """The chosen cam (if cams are on and it is known) and its offset."""
         state = self._load()
         cam = self._cams.get(state.cam or "") if state.on else None
-        return cam, (state.offsets.get(cam.id, 0) if cam else 0)
+        return cam, (state.offset if cam and cam.supports_offset else 0)
 
-    def offset_of(self, cam_id: str) -> int:
-        """The offset this cam was last given (0 if never, or if it has no archive)."""
-        cam = self._cams.get(cam_id)
-        if cam is None or not cam.supports_offset:
-            return 0
-        return self._load().offsets.get(cam_id, 0)
+    def offset(self) -> int:
+        """The time offset, whether or not the chosen cam can use it."""
+        return self._load().offset
 
     def local_time(self, when: datetime) -> str:
         return when.astimezone(self._now().tzinfo).strftime("%Y-%m-%d %H:%M")
@@ -193,8 +190,6 @@ class App:
                 continue
             if state.cam == old:
                 state.cam = new
-            if old in state.offsets:
-                state.offsets.setdefault(new, state.offsets.pop(old))
         return state
 
     def _save(self, state: State) -> None:
@@ -263,7 +258,7 @@ class App:
                 age = None
             if age is not None and timedelta(0) <= age < timedelta(minutes=cam.interval_minutes) - _INTERVAL_SLACK:
                 return
-        offset = state.offsets.get(cam.id, 0) if cam.supports_offset else 0
+        offset = state.offset if cam.supports_offset else 0
         server_error = None
         for candidate in candidates(cam, offset, now):
             if candidate.key is not None and candidate.key == state.shown_key:
