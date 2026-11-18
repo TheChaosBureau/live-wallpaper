@@ -1,8 +1,8 @@
 [Desktop Entry]
 Type=Application
-Name=Set time offset…
-Comment=Show the current cam some hours behind live
-Exec=live-wallpaper pick-offset
+Name=Live wallpaper
+Comment=Preview the webcams and set one as the wallpaper
+Exec=live-wallpaper window
 Icon=preferences-desktop-wallpaper
 Terminal=false
 Categories=Utility;

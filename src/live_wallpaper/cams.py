@@ -144,3 +144,10 @@ def default_cam_paths(env: dict[str, str] | None = None) -> list[Path]:
 
 def allowed_hosts(cams: dict[str, Cam]) -> frozenset[str]:
     return frozenset(cam.host for cam in cams.values())
+
+
+def filter_cams(cams: list[Cam], text: str) -> list[Cam]:
+    """Cams whose name or id contains every word of `text` (any case)."""
+    words = text.casefold().split()
+    return [cam for cam in cams
+            if all(word in f"{cam.name} {cam.id}".casefold() for word in words)]

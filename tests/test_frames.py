@@ -73,3 +73,8 @@ def test_offset_is_real_hours_across_the_spring_change():
 def test_stepping_back_over_the_spring_gap_skips_the_hour_that_does_not_exist():
     got = candidates(ZUG, 0, datetime(2026, 3, 29, 1, 5, tzinfo=UTC))    # 03:05 CEST
     assert [c.key for c in got[:2]] == ["2026/03/29/0300", "2026/03/29/0150"]
+
+
+def test_another_size_can_be_asked_of_an_archive():
+    now = datetime(2026, 11, 17, 22, 3, tzinfo=UTC)
+    assert candidates(ZUG, 0, now, size="la")[0].url.endswith("/2026/11/17/2300_la.jpg")

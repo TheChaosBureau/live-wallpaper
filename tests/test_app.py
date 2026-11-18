@@ -523,3 +523,34 @@ def test_an_old_name_is_left_alone_if_it_still_exists(rig):
     save_state(rig.paths.state_file, State(on=True, cam="alps-koenigssee"))
     rig.app.refresh()
     assert rig.state.cam == "alps-koenigssee"
+
+
+def test_use_with_an_offset_sets_both_at_once(tmp_path):
+    rig = Rig(tmp_path)
+    assert rig.app.use("zug", 9) is None
+    assert rig.state.cam == "zug" and rig.state.offsets == {"zug": 9}
+    assert rig.state.shown_key == "2026/11/17/1400"
+    assert rig.app.offset_of("zug") == 9
+
+
+def test_use_without_an_offset_keeps_the_one_the_cam_had(tmp_path):
+    rig = Rig(tmp_path)
+    rig.app.use("zug", 9)
+    rig.app.use("a")
+    rig.app.use("zug")
+    assert rig.state.offsets == {"zug": 9}
+
+
+def test_use_refuses_a_bad_offset_and_changes_nothing(tmp_path):
+    rig = Rig(tmp_path)
+    with pytest.raises(UserError, match="0 to 23"):
+        rig.app.use("zug", 24)
+    with pytest.raises(UserError, match="no archive"):
+        rig.app.use("a", 3)
+    assert rig.state.on is False and rig.desktop.values["picture-uri"] == "file:///photo.jpg"
+    assert rig.app.use("a", 0) is None and rig.state.offsets == {}
+
+
+def test_offset_of_is_zero_for_a_cam_never_set_or_without_an_archive(tmp_path):
+    rig = Rig(tmp_path)
+    assert rig.app.offset_of("zug") == 0 and rig.app.offset_of("a") == 0 and rig.app.offset_of("nope") == 0

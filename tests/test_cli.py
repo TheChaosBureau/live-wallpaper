@@ -60,7 +60,7 @@ def test_off_works_with_a_broken_cam_list(env, capsys):
 
 def test_use_reports_a_frame_that_could_not_be_fetched(monkeypatch, capsys):
     class Stub:
-        def use(self, cam):
+        def use(self, cam, hours=None):
             return "could not reach a.example"
 
     from live_wallpaper import cli

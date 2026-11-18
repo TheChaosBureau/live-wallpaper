@@ -1,9 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Back to photos
-Comment=Stop the webcam wallpaper and restore the previous one
-Exec=live-wallpaper --gui off
-Icon=preferences-desktop-wallpaper
-Terminal=false
-Categories=Utility;
-Keywords=cam;webcam;wallpaper;live;
