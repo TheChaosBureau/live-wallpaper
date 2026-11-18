@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import fcntl
+import hashlib
 import os
 import tempfile
 from contextlib import contextmanager
@@ -15,6 +16,7 @@ from .cams import Cam
 from .desktop import KEYS, Desktop, DesktopError
 from .fetch import Fetcher, FetchError
 from .frames import candidates
+from .stamp import stamp as draw_credit
 from .state import Paths, State, load_state, save_state
 
 KEEP_FRAMES = 2
@@ -27,7 +29,8 @@ class UserError(Exception):
 
 class App:
     def __init__(self, cams: dict[str, Cam], paths: Paths, fetcher: Fetcher, desktop: Desktop,
-                 now: Callable[[], datetime]):
+                 now: Callable[[], datetime], stamp: Callable[[bytes, str], bytes] = draw_credit):
+        self._stamp = stamp
         self._cams = cams
         self._paths = paths
         self._fetcher = fetcher
@@ -183,6 +186,7 @@ class App:
     def _forget_frame(state: State) -> None:
         state.shown_key = None
         state.shown_path = None
+        state.shown_hash = None
         state.validator = None
         state.fetched_at = None
 
@@ -237,8 +241,11 @@ class App:
                 continue
             if fetched.status == "missing":
                 continue
-            if fetched.status == "ok" and not self._same_as_shown(state, fetched.data or b""):
-                path = self._write_frame(cam, fetched.data or b"", now)
+            raw = fetched.data or b""
+            digest = hashlib.sha256(raw).hexdigest()
+            if fetched.status == "ok" and not self._same_as_shown(state, digest):
+                picture = self._stamp(raw, cam.credit) if cam.credit else raw
+                path = self._write_frame(cam, picture, now)
                 try:
                     uri = path.as_uri()
                     self._desktop.set("picture-uri", uri)
@@ -249,6 +256,7 @@ class App:
                     self._prune(self._shown_file(), drop=path)
                     raise
                 state.shown_path = str(path)
+                state.shown_hash = digest
                 self._prune(path)
             if fetched.status == "ok":
                 state.shown_key = candidate.key
@@ -260,15 +268,13 @@ class App:
         detail = f" ({server_error})" if server_error else ""
         raise FetchError(f"no frame available for {cam.name} at that time{detail}")
 
-    def _same_as_shown(self, state: State, data: bytes) -> bool:
-        """True if the wallpaper already shows exactly these bytes."""
-        if not state.shown_path:
+    def _same_as_shown(self, state: State, digest: str) -> bool:
+        """True if the wallpaper already shows this very download."""
+        if not state.shown_path or state.shown_hash != digest:
             return False
         try:
             shown = Path(state.shown_path)
-            if self._desktop.get("picture-uri") != shown.as_uri():
-                return False
-            return shown.stat().st_size == len(data) and shown.read_bytes() == data
+            return shown.exists() and self._desktop.get("picture-uri") == shown.as_uri()
         except (OSError, DesktopError, ValueError):
             return False
 

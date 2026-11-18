@@ -8,8 +8,8 @@ and its latest frame becomes your wallpaper and keeps refreshing.
 - **Manual control only.** You choose the cam and its time offset. It never
   rotates cams or swaps the wallpaper on its own judgment. A cam that is dark at
   night is shown dark.
-- **Small and readable.** Python standard library only, plus `gsettings` and
-  `zenity`.
+- **Small and readable.** Python standard library, plus `gsettings`, `zenity`
+  and Pillow (used only to draw a credit line on cams that ask for one).
 
 Tested on GNOME (Wayland) on NixOS 26.05. Other desktops and other install paths
 are not supported; forks are welcome.
@@ -92,6 +92,27 @@ For sites running the foto-webcam software, which publish every frame at
 These cams support a time offset. With an offset of 9 hours, a cam nine time
 zones east of you follows your day: its sunrise arrives with yours.
 
+### Credit: foto-webcam.eu
+
+The `foto-webcam` kind exists because of [foto-webcam.eu](https://www.foto-webcam.eu/),
+a volunteer-run network of several hundred Alpine cameras whose pictures are in a
+different league from ordinary webcams. The images are theirs: their copyright,
+their terms. Those terms ask for a visible source credit and forbid cropping or
+stretching, so cams from that site should carry their name and show the whole image:
+
+```nix
+{
+  id = "zugspitze"; name = "Zugspitze"; kind = "foto-webcam";
+  url = "https://www.foto-webcam.eu"; cam = "zugspitze";
+  credit = "www.foto-webcam.eu";   # stamped on every frame
+  fit = "scaled";                  # whole image, never cropped
+}
+```
+
+This project is not affiliated with foto-webcam.eu and ships none of its cameras.
+If you use them, read the "Webcam-Infos" page of each camera first, and visit the
+site itself: the archive and the full-size pictures there are worth it.
+
 ### Fields
 
 | Field | Meaning | Default |
@@ -105,6 +126,7 @@ zones east of you follows your day: its sunrise arrives with yours.
 | `timezone` | Zone of the archive's file names | `Europe/Berlin` |
 | `size` | Archive size suffix | `uh` (3840×2160) |
 | `fit` | `zoom` fills the screen, `scaled` shows the whole image | `zoom` |
+| `credit` | One short line stamped small in the bottom-right corner of the frame | none |
 
 ## Safety
 

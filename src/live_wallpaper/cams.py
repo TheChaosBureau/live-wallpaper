@@ -15,7 +15,7 @@ KINDS = ("latest", "foto-webcam")
 FITS = ("zoom", "scaled")
 _ID = re.compile(r"[a-z0-9][a-z0-9-]*\Z")
 _SIZE = re.compile(r"[a-z0-9]+\Z")
-_FIELDS = {"id", "name", "kind", "url", "cam", "interval_minutes", "timezone", "size", "fit"}
+_FIELDS = {"id", "name", "kind", "url", "cam", "interval_minutes", "timezone", "size", "fit", "credit"}
 _DEFAULT_INTERVAL = {"latest": 5, "foto-webcam": 10}
 
 
@@ -34,6 +34,7 @@ class Cam:
     timezone: str = "Europe/Berlin"
     size: str = "uh"
     fit: str = "zoom"
+    credit: str | None = None
 
     def __post_init__(self) -> None:
         if self.interval_minutes is None:
@@ -91,8 +92,12 @@ def _parse_one(raw: object, where: str) -> Cam:
     fit = raw.get("fit", "zoom")
     if fit not in FITS:
         raise CamError(f"{where}: fit must be one of {', '.join(FITS)}")
+    credit = raw.get("credit")
+    if credit is not None and (not isinstance(credit, str) or not credit.strip()
+                               or len(credit) > 80 or not credit.isprintable()):
+        raise CamError(f"{where}: credit must be one short line of text (at most 80 characters)")
     return Cam(id=cam_id, name=name, kind=kind, url=url, cam=site_cam,
-               interval_minutes=interval, timezone=tz, size=size, fit=fit)
+               interval_minutes=interval, timezone=tz, size=size, fit=fit, credit=credit)
 
 
 def parse_cams(raw: object) -> list[Cam]:

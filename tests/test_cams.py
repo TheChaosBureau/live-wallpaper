@@ -76,3 +76,16 @@ def test_allowed_hosts():
         {"id": "a", "name": "A", "kind": "latest", "url": "https://a.example/x.jpg"},
         {"id": "b", "name": "B", "kind": "foto-webcam", "url": "https://www.foto-webcam.eu", "cam": "z"}])}
     assert allowed_hosts(cams) == {"a.example", "www.foto-webcam.eu"}
+
+
+def test_credit_is_optional_text():
+    plain, credited = parse_cams([
+        {"id": "a", "name": "A", "kind": "latest", "url": "https://a.example/x.jpg"},
+        {"id": "b", "name": "B", "kind": "latest", "url": "https://a.example/y.jpg", "credit": "www.example.org"}])
+    assert plain.credit is None and credited.credit == "www.example.org"
+
+
+@pytest.mark.parametrize("credit", ["", "   ", 7, "x" * 81, "two\nlines"])
+def test_bad_credit_rejected(credit):
+    with pytest.raises(CamError):
+        parse_cams([{"id": "a", "name": "A", "kind": "latest", "url": "https://a.example/x.jpg", "credit": credit}])

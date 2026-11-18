@@ -449,3 +449,53 @@ def test_use_and_offset_return_the_problem_if_the_frame_could_not_be_fetched(rig
     assert "could not reach" in rig.app.use("a")
     assert rig.app.use("zug") is None
     assert "no frame" in rig.app.set_offset(1)
+
+
+# ---- credit line ------------------------------------------------------------
+
+def credited_rig(tmp_path):
+    rig = Rig(tmp_path)
+    rig.stamped = []
+
+    def fake_stamp(data, text):
+        rig.stamped.append(text)
+        return data + b"|" + text.encode()
+
+    rig.cams.update({c.id: c for c in parse_cams([
+        {"id": "credited", "name": "C", "kind": "latest", "url": "https://a.example/c.jpg",
+         "credit": "www.example.org"}])})
+    rig.fetcher.responses["https://a.example/c.jpg"] = Fetched("ok", JPEG, "V1")
+    rig.app = App(rig.cams, rig.paths, rig.fetcher, rig.desktop, rig.clock, stamp=fake_stamp)
+    return rig
+
+
+def test_a_cam_with_a_credit_gets_it_stamped_on_the_frame(tmp_path):
+    rig = credited_rig(tmp_path)
+    rig.app.use("credited")
+    assert Path(rig.uri.removeprefix("file://")).read_bytes() == JPEG + b"|www.example.org"
+
+
+def test_a_cam_without_a_credit_is_left_untouched(tmp_path):
+    rig = credited_rig(tmp_path)
+    rig.app.use("a")
+    assert rig.stamped == [] and Path(rig.uri.removeprefix("file://")).read_bytes() == JPEG
+
+
+def test_identical_download_of_a_credited_cam_is_not_stamped_again(tmp_path):
+    rig = credited_rig(tmp_path)
+    rig.app.use("credited")
+    shown = rig.uri
+    rig.clock.advance(minutes=6)
+    rig.app.refresh()
+    assert rig.uri == shown and rig.stamped == ["www.example.org"] and len(rig.frames()) == 1
+
+
+def test_a_frame_that_cannot_be_stamped_is_not_shown(tmp_path):
+    rig = credited_rig(tmp_path)
+
+    def broken(data, text):
+        raise FetchError("the picture could not be read")
+
+    rig.app = App(rig.cams, rig.paths, rig.fetcher, rig.desktop, rig.clock, stamp=broken)
+    problem = rig.app.use("credited")
+    assert "could not be read" in problem and rig.uri == "file:///photo.jpg" and rig.frames() == []
