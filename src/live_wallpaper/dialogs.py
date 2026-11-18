@@ -45,3 +45,33 @@ def pick_offset(cam: Cam, current: int, run=subprocess.run) -> int | None:
 
 def show_message(text: str, run=subprocess.run) -> None:
     _zenity(["--info", "--no-markup", "--title=Live wallpaper", f"--text={text}"], run)
+
+
+LONG_LIST = 40
+
+
+def filter_cams(cams: list[Cam], text: str) -> list[Cam]:
+    """Cams whose name or id contains every word of `text` (any case)."""
+    words = text.casefold().split()
+    return [cam for cam in cams
+            if all(word in f"{cam.name} {cam.id}".casefold() for word in words)]
+
+
+def ask_filter(count: int, run=subprocess.run) -> str | None:
+    return _zenity(["--entry", "--title=Pick cam",
+                    f"--text=There are {count} cams. Type part of a name to narrow the list "
+                    "(a place, a mountain, a country), or leave it empty to see them all."], run)
+
+
+def choose_cam(cams: list[Cam], current: str | None, run=subprocess.run) -> str | None:
+    """The whole picking flow: a name filter first when the list is long."""
+    if len(cams) > LONG_LIST:
+        text = ask_filter(len(cams), run)
+        if text is None:
+            return None
+        matches = filter_cams(cams, text)
+        if not matches:
+            show_message(f"No cam matches \"{text}\".", run)
+            return None
+        cams = matches
+    return pick_cam(cams, current, run)

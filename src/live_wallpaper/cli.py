@@ -81,7 +81,7 @@ def _run(app: App, args: argparse.Namespace) -> None:
         app.refresh()
     elif args.command == "pick":
         current, _ = app.current()
-        chosen = dialogs.pick_cam(app.list_cams(), current.id if current else None)
+        chosen = dialogs.choose_cam(app.list_cams(), current.id if current else None)
         if chosen is not None:
             _fetched(app.use(chosen))
     elif args.command == "pick-offset":

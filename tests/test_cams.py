@@ -4,6 +4,7 @@ import json
 import pytest
 
 from live_wallpaper.cams import (
+    BUILTIN_FILES,
     CamError,
     allowed_hosts,
     default_cam_paths,
@@ -18,14 +19,15 @@ def write(path, cams):
 
 
 def builtin():
-    return load_cams([default_cam_paths()[0]])
+    return load_cams(default_cam_paths()[:BUILTIN_FILES])
 
 
-def test_builtin_cams_load_and_have_unique_ids():
+def test_builtin_cams_load_and_no_id_is_used_twice():
     import json
-    raw = json.loads(default_cam_paths()[0].read_text(encoding="utf-8"))
+    raw = [cam for path in default_cam_paths()[:BUILTIN_FILES]
+           for cam in json.loads(path.read_text(encoding="utf-8"))]
     cams = builtin()
-    assert len(cams) == len(raw) == 13
+    assert len(cams) == len(raw)
     assert {"earth-west", "yosemite-high-sierra", "huntington-beach", "alps-zugspitze"} <= set(cams)
 
 
@@ -36,8 +38,9 @@ def test_builtin_hosts_are_the_expected_ones():
 
 def test_foto_webcam_eu_cams_carry_its_credit_and_are_never_cropped():
     theirs = [c for c in builtin().values() if c.host == "www.foto-webcam.eu"]
-    assert len(theirs) == 5
-    assert all(c.credit == "www.foto-webcam.eu" and c.fit == "scaled" and c.supports_offset for c in theirs)
+    assert len(theirs) > 200
+    assert all(c.credit == "www.foto-webcam.eu" and c.fit == "scaled" and c.supports_offset
+               and c.id.startswith("alps-") and c.interval_minutes in (10, 60) for c in theirs)
 
 
 def test_yosemite_cams_are_never_cropped():
