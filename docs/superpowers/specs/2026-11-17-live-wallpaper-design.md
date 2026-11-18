@@ -2,6 +2,12 @@
 
 Date: 2026-11-17. Status: approved.
 
+> Amended 2026-11-17 (owner's decision): the full cam list, including the
+> foto-webcam.eu Alpine cams and the Yosemite cams, ships in this repo, with a
+> credit line stamped on frames where the owner asks for one. The owners are
+> contacted openly and the list follows their answers. This replaces the
+> anti-goal and the "ships with NOAA only" lines below.
+
 ## Intent
 
 Make a GNOME desktop a manually chosen window onto a real place. The user picks a

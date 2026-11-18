@@ -59,8 +59,18 @@ live-wallpaper off             # stop and restore the previous wallpaper
 
 ## Cams
 
-The package ships with two cams, both NOAA GOES satellite views of Earth
-(`earth-west`, `earth-east`), which are US government works in the public domain.
+The package ships with these cams:
+
+| Cams | From | Notes |
+|---|---|---|
+| `earth-west`, `earth-east` | NOAA GOES satellites | US government works, public domain |
+| `yosemite-high-sierra`, `yosemite-falls`, `yosemite-half-dome`, `yosemite-el-capitan`, `yosemite-wawona-dome` | [Yosemite Conservancy](https://yosemite.org/webcams/) | Shown whole, never cropped; each frame carries the Conservancy's logo |
+| `huntington-beach` | Huntington Beach pier, hosted by Pixelcaster | |
+| `alps-zugspitze`, `alps-grossglockner`, `alps-koenigssee`, `alps-walchensee`, `alps-ortler` | [foto-webcam.eu](https://www.foto-webcam.eu/) | Shown whole with a `www.foto-webcam.eu` credit on every frame; these support a time offset |
+
+The pictures belong to the people who run the cameras, not to this project. If
+you run one of these cameras and would like it shown differently, credited
+differently, or removed, please open an issue and it will be changed.
 
 Add your own through `programs.live-wallpaper.cams`, or in
 `~/.config/live-wallpaper/cams.json` (a JSON list with the same fields). A cam
@@ -109,9 +119,11 @@ stretching, so cams from that site should carry their name and show the whole im
 }
 ```
 
-This project is not affiliated with foto-webcam.eu and ships none of its cameras.
-If you use them, read the "Webcam-Infos" page of each camera first, and visit the
-site itself: the archive and the full-size pictures there are worth it.
+This project is not affiliated with foto-webcam.eu. It ships five of its cameras,
+set up exactly as above, and its operators have been asked whether that is all
+right with them; the list will follow their answer. If you add more, read the
+"Webcam-Infos" page of each camera first. And visit the site itself: the archive
+and the full-size pictures there are worth it.
 
 ### Fields
 
