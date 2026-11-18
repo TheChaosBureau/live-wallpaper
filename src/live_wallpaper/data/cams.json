@@ -14,5 +14,96 @@
     "url": "https://cdn.star.nesdis.noaa.gov/GOES19/ABI/FD/GEOCOLOR/1808x1808.jpg",
     "interval_minutes": 10,
     "fit": "scaled"
+  },
+  {
+    "id": "yosemite-high-sierra",
+    "name": "Yosemite: High Sierra",
+    "kind": "latest",
+    "url": "https://pixelcaster.com/yosemite/webcams/sentinel.jpg",
+    "fit": "scaled"
+  },
+  {
+    "id": "yosemite-falls",
+    "name": "Yosemite: Yosemite Falls",
+    "kind": "latest",
+    "url": "https://pixelcaster.com/yosemite/webcams/yosfalls.jpg",
+    "fit": "scaled"
+  },
+  {
+    "id": "yosemite-half-dome",
+    "name": "Yosemite: Half Dome",
+    "kind": "latest",
+    "url": "https://pixelcaster.com/yosemite/webcams/ahwahnee2.jpg",
+    "fit": "scaled"
+  },
+  {
+    "id": "yosemite-el-capitan",
+    "name": "Yosemite: El Capitan",
+    "kind": "latest",
+    "url": "https://pixelcaster.com/yosemite/webcams/turtleback.jpg",
+    "fit": "scaled"
+  },
+  {
+    "id": "yosemite-wawona-dome",
+    "name": "Yosemite: Wawona Dome",
+    "kind": "latest",
+    "url": "https://pixelcaster.com/yosemite/webcams/wawona.jpg",
+    "fit": "scaled"
+  },
+  {
+    "id": "huntington-beach",
+    "name": "Huntington Beach pier",
+    "kind": "latest",
+    "url": "https://cdn.pixelcaster.com/public.pixelcaster.com/snapshots/hb-innocean/latest.jpg"
+  },
+  {
+    "id": "alps-zugspitze",
+    "name": "Alps: Zugspitze summit",
+    "kind": "foto-webcam",
+    "url": "https://www.foto-webcam.eu",
+    "cam": "zugspitze",
+    "interval_minutes": 10,
+    "fit": "scaled",
+    "credit": "www.foto-webcam.eu"
+  },
+  {
+    "id": "alps-grossglockner",
+    "name": "Alps: Grossglockner from Freiwandeck",
+    "kind": "foto-webcam",
+    "url": "https://www.foto-webcam.eu",
+    "cam": "freiwandeck",
+    "interval_minutes": 10,
+    "fit": "scaled",
+    "credit": "www.foto-webcam.eu"
+  },
+  {
+    "id": "alps-koenigssee",
+    "name": "Alps: Königssee from Funtenseetauern",
+    "kind": "foto-webcam",
+    "url": "https://www.foto-webcam.eu",
+    "cam": "funtenseetauern",
+    "interval_minutes": 10,
+    "fit": "scaled",
+    "credit": "www.foto-webcam.eu"
+  },
+  {
+    "id": "alps-walchensee",
+    "name": "Alps: Walchensee from Herzogstand",
+    "kind": "foto-webcam",
+    "url": "https://www.foto-webcam.eu",
+    "cam": "herzogstand",
+    "interval_minutes": 10,
+    "fit": "scaled",
+    "credit": "www.foto-webcam.eu"
+  },
+  {
+    "id": "alps-ortler",
+    "name": "Alps: Ortler glaciers from Trafoi",
+    "kind": "foto-webcam",
+    "url": "https://www.foto-webcam.eu",
+    "cam": "trafoi",
+    "interval_minutes": 10,
+    "fit": "scaled",
+    "credit": "www.foto-webcam.eu"
   }
 ]

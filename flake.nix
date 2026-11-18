@@ -14,6 +14,7 @@
         pyproject = true;
         src = self;
         build-system = [ pkgs.python3Packages.setuptools ];
+        dependencies = [ pkgs.python3Packages.pillow ];
         nativeCheckInputs = [ pkgs.python3Packages.pytestCheckHook pkgs.desktop-file-utils ];
         postInstall = ''
           install -Dm644 -t $out/share/applications share/applications/*.desktop
@@ -49,7 +50,7 @@
       });
       devShells = forAll (pkgs: {
         default = pkgs.mkShell {
-          packages = [ (pkgs.python3.withPackages (p: [ p.pytest ])) ];
+          packages = [ (pkgs.python3.withPackages (p: [ p.pytest p.pillow ])) ];
         };
       });
     };

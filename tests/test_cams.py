@@ -17,10 +17,32 @@ def write(path, cams):
     return path
 
 
-def test_builtin_cams_are_noaa_only():
-    cams = load_cams([default_cam_paths()[0]])
-    assert cams and all(c.host == "cdn.star.nesdis.noaa.gov" for c in cams.values())
-    assert all(c.kind == "latest" and c.fit == "scaled" for c in cams.values())
+def builtin():
+    return load_cams([default_cam_paths()[0]])
+
+
+def test_builtin_cams_load_and_have_unique_ids():
+    import json
+    raw = json.loads(default_cam_paths()[0].read_text(encoding="utf-8"))
+    cams = builtin()
+    assert len(cams) == len(raw) == 13
+    assert {"earth-west", "yosemite-high-sierra", "huntington-beach", "alps-zugspitze"} <= set(cams)
+
+
+def test_builtin_hosts_are_the_expected_ones():
+    assert allowed_hosts(builtin()) == {
+        "cdn.star.nesdis.noaa.gov", "pixelcaster.com", "cdn.pixelcaster.com", "www.foto-webcam.eu"}
+
+
+def test_foto_webcam_eu_cams_carry_its_credit_and_are_never_cropped():
+    theirs = [c for c in builtin().values() if c.host == "www.foto-webcam.eu"]
+    assert len(theirs) == 5
+    assert all(c.credit == "www.foto-webcam.eu" and c.fit == "scaled" and c.supports_offset for c in theirs)
+
+
+def test_yosemite_cams_are_never_cropped():
+    theirs = [c for c in builtin().values() if c.id.startswith("yosemite-")]
+    assert len(theirs) == 5 and all(c.fit == "scaled" for c in theirs)
 
 
 def test_later_file_overrides_by_id(tmp_path):
@@ -76,3 +98,16 @@ def test_allowed_hosts():
         {"id": "a", "name": "A", "kind": "latest", "url": "https://a.example/x.jpg"},
         {"id": "b", "name": "B", "kind": "foto-webcam", "url": "https://www.foto-webcam.eu", "cam": "z"}])}
     assert allowed_hosts(cams) == {"a.example", "www.foto-webcam.eu"}
+
+
+def test_credit_is_optional_text():
+    plain, credited = parse_cams([
+        {"id": "a", "name": "A", "kind": "latest", "url": "https://a.example/x.jpg"},
+        {"id": "b", "name": "B", "kind": "latest", "url": "https://a.example/y.jpg", "credit": "www.example.org"}])
+    assert plain.credit is None and credited.credit == "www.example.org"
+
+
+@pytest.mark.parametrize("credit", ["", "   ", 7, "x" * 81, "two\nlines"])
+def test_bad_credit_rejected(credit):
+    with pytest.raises(CamError):
+        parse_cams([{"id": "a", "name": "A", "kind": "latest", "url": "https://a.example/x.jpg", "credit": credit}])

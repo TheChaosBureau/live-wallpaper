@@ -34,13 +34,14 @@ class State:
     saved: dict[str, str] | None = None
     shown_key: str | None = None
     shown_path: str | None = None
+    shown_hash: str | None = None
     frame_time: str | None = None
     fetched_at: str | None = None
     validator: str | None = None
     last_error: str | None = None
 
 
-_OPTIONAL_STRINGS = ("cam", "shown_key", "shown_path", "frame_time", "fetched_at", "validator", "last_error")
+_OPTIONAL_STRINGS = ("cam", "shown_key", "shown_path", "shown_hash", "frame_time", "fetched_at", "validator", "last_error")
 
 
 def _is_int(value: object) -> bool:
