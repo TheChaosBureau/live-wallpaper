@@ -1,9 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Pick cam…
-Comment=Show a webcam as the wallpaper
-Exec=live-wallpaper pick
-Icon=preferences-desktop-wallpaper
-Terminal=false
-Categories=Utility;
-Keywords=cam;webcam;wallpaper;live;

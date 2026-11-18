@@ -114,3 +114,15 @@ def test_credit_is_optional_text():
 def test_bad_credit_rejected(credit):
     with pytest.raises(CamError):
         parse_cams([{"id": "a", "name": "A", "kind": "latest", "url": "https://a.example/x.jpg", "credit": credit}])
+
+
+def test_filter_cams_matches_every_word_in_any_case_in_name_or_id():
+    from live_wallpaper.cams import filter_cams
+    cams = parse_cams([
+        {"id": "a", "name": "Cam A", "kind": "latest", "url": "https://a.example/x.jpg"},
+        {"id": "zug", "name": "Zugspitze", "kind": "foto-webcam", "url": "https://www.foto-webcam.eu",
+         "cam": "zugspitze"}])
+    assert [c.id for c in filter_cams(cams, "ZUG")] == ["zug"]
+    assert [c.id for c in filter_cams(cams, "cam a")] == ["a"]
+    assert [c.id for c in filter_cams(cams, "  ")] == ["a", "zug"]
+    assert filter_cams(cams, "nothing-like-this") == []

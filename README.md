@@ -8,8 +8,9 @@ and its latest frame becomes your wallpaper and keeps refreshing.
 - **Manual control only.** You choose the cam and its time offset. It never
   rotates cams or swaps the wallpaper on its own judgment. A cam that is dark at
   night is shown dark.
-- **Small and readable.** Python standard library, plus `gsettings`, `zenity`
-  and Pillow (used only to draw a credit line on cams that ask for one).
+- **Small and readable.** Python standard library, plus `gsettings`, GTK 4 (the
+  settings window) and Pillow (used only to draw a credit line on cams that ask
+  for one).
 
 Tested on GNOME (Wayland) on NixOS 26.05. Other desktops and other install paths
 are not supported; forks are welcome.
@@ -36,16 +37,27 @@ are not supported; forks are welcome.
 }
 ```
 
-This installs the `live-wallpaper` command, three launcher entries, and a user
+This installs the `live-wallpaper` command, a launcher entry, and a user
 timer that refreshes the wallpaper every 5 minutes while cams are on.
 
 ## Use
 
-Press Super and type "cam":
+Press Super, type "cam" and open **Live wallpaper**. The window stays open
+while you try things:
 
-- **Pick cam…** chooses a cam and switches cams on.
-- **Set time offset…** shows the current cam some hours behind live.
+- **Click a cam** to see its picture. Type in the search box to narrow the list
+  (a place, a mountain, a country).
+- **Time offset** shows the cam some hours behind live, for cams that have an
+  archive.
+- **Set as wallpaper** makes the cam and offset you are looking at the
+  wallpaper. Nothing changes until you press it. A tick in the list marks the
+  cam that is the wallpaper now.
 - **Back to photos** stops and restores the wallpaper you had before.
+
+Looking at a cam asks its site for one picture, and a picture already looked at
+is reused for five minutes. Cams with an archive are previewed from the
+archive's small size (about 80 kB); the window never loads pictures for cams you
+have not clicked.
 
 Or from a terminal:
 
@@ -55,6 +67,7 @@ live-wallpaper use earth-west  # switch cams on and show this cam
 live-wallpaper offset 9        # show the current cam 9 hours behind (0 = live)
 live-wallpaper status          # cam, offset, frame time, last error
 live-wallpaper off             # stop and restore the previous wallpaper
+live-wallpaper window          # open the settings window
 ```
 
 ## Cams
@@ -126,15 +139,15 @@ is a snapshot made by `tools/update_foto_webcam.py`, which reads the site's publ
 camera index and checks each camera once without downloading any picture. And
 visit the site itself: the archive and the full-size pictures there are worth it.
 
-With this many cams, "Pick cam…" first asks for part of a name (a place, a
-mountain, a country) and then shows the matches.
+With this many cams, the search box in the settings window is the way in: type
+part of a name (a place, a mountain, a country).
 
 ### Fields
 
 | Field | Meaning | Default |
 |---|---|---|
 | `id` | Lower-case letters, digits and dashes | required |
-| `name` | Shown in the picker | required |
+| `name` | Shown in the settings window | required |
 | `kind` | `latest` or `foto-webcam` | required |
 | `url` | `https://` image URL (`latest`) or site address (`foto-webcam`) | required |
 | `cam` | The site's own cam id (`foto-webcam` only) | required for `foto-webcam` |

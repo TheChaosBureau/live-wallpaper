@@ -19,8 +19,8 @@ class Candidate:
     frame_time: datetime | None
 
 
-def candidates(cam: Cam, offset_hours: int, now: datetime) -> list[Candidate]:
-    """Frame URLs to try, newest first."""
+def candidates(cam: Cam, offset_hours: int, now: datetime, size: str | None = None) -> list[Candidate]:
+    """Frame URLs to try, newest first. `size` asks an archive for another image size."""
     if now.tzinfo is None:
         raise ValueError("now must be timezone-aware")
     if cam.kind == "latest":
@@ -40,5 +40,5 @@ def candidates(cam: Cam, offset_hours: int, now: datetime) -> list[Candidate]:
     for step in range(STEP_BACK_LIMIT + 1):
         frame_utc = first_utc - timedelta(minutes=interval * step)
         key = frame_utc.astimezone(zone).strftime("%Y/%m/%d/%H%M")
-        out.append(Candidate(f"{cam.url}/webcam/{cam.cam}/{key}_{cam.size}.jpg", key, frame_utc))
+        out.append(Candidate(f"{cam.url}/webcam/{cam.cam}/{key}_{size or cam.size}.jpg", key, frame_utc))
     return out

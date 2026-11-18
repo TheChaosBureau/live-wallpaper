@@ -49,17 +49,28 @@ class App:
 
     # ---- what the user does -------------------------------------------------
 
-    def use(self, cam_id: str) -> str | None:
-        """Show this cam. Returns the problem if its frame could not be fetched."""
+    def use(self, cam_id: str, hours: int | None = None) -> str | None:
+        """Show this cam, at this offset if one is given (else the one it had).
+
+        Returns the problem if its frame could not be fetched.
+        """
         if cam_id not in self._cams:
             known = ", ".join(self._cams) or "none configured"
             raise UserError(f"There is no cam called {cam_id!r}. Cams: {known}")
+        cam = self._cams[cam_id]
+        if hours is not None:
+            if not 0 <= hours <= 23:
+                raise UserError("The time offset must be a whole number of hours from 0 to 23.")
+            if hours and not cam.supports_offset:
+                raise UserError(f"{cam.name} has no archive, so it can only be shown live")
         with self._lock(wait=True):
             state = self._load()
             if not state.on and state.saved is None:
                 state.saved = self._read_original()
             state.on = True
             state.cam = cam_id
+            if hours is not None and cam.supports_offset:
+                state.offsets[cam_id] = hours
             self._forget_frame(state)
             state.frame_time = None
             self._paths.cache_dir.mkdir(parents=True, exist_ok=True)
@@ -162,6 +173,16 @@ class App:
         state = self._load()
         cam = self._cams.get(state.cam or "") if state.on else None
         return cam, (state.offsets.get(cam.id, 0) if cam else 0)
+
+    def offset_of(self, cam_id: str) -> int:
+        """The offset this cam was last given (0 if never, or if it has no archive)."""
+        cam = self._cams.get(cam_id)
+        if cam is None or not cam.supports_offset:
+            return 0
+        return self._load().offsets.get(cam_id, 0)
+
+    def local_time(self, when: datetime) -> str:
+        return when.astimezone(self._now().tzinfo).strftime("%Y-%m-%d %H:%M")
 
     # ---- internals ----------------------------------------------------------
 
