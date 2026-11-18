@@ -499,3 +499,27 @@ def test_a_frame_that_cannot_be_stamped_is_not_shown(tmp_path):
     rig.app = App(rig.cams, rig.paths, rig.fetcher, rig.desktop, rig.clock, stamp=broken)
     problem = rig.app.use("credited")
     assert "could not be read" in problem and rig.uri == "file:///photo.jpg" and rig.frames() == []
+
+
+# ---- cams that were renamed between versions ---------------------------------
+
+def test_a_renamed_cam_and_its_offset_carry_over(rig):
+    rig.cams.update({c.id: c for c in parse_cams([
+        {"id": "alps-funtenseetauern", "name": "Königssee", "kind": "foto-webcam",
+         "url": "https://www.foto-webcam.eu", "cam": "funtenseetauern"}])})
+    rig.fetcher.responses["https://www.foto-webcam.eu/webcam/funtenseetauern/2026/11/17/1400_uh.jpg"] = \
+        Fetched("ok", JPEG, None)
+    save_state(rig.paths.state_file, State(on=True, cam="alps-koenigssee", offsets={"alps-koenigssee": 9},
+                                           saved={"picture-uri": "file:///photo.jpg"}))
+    rig.app.refresh()
+    assert rig.state.cam == "alps-funtenseetauern" and rig.state.offsets == {"alps-funtenseetauern": 9}
+    assert rig.state.last_error is None and rig.state.shown_key == "2026/11/17/1400"
+    assert "Cam: Königssee (alps-funtenseetauern)" in rig.app.status()
+
+
+def test_an_old_name_is_left_alone_if_it_still_exists(rig):
+    rig.cams.update({c.id: c for c in parse_cams([
+        {"id": "alps-koenigssee", "name": "Mine", "kind": "latest", "url": "https://a.example/x.jpg"}])})
+    save_state(rig.paths.state_file, State(on=True, cam="alps-koenigssee"))
+    rig.app.refresh()
+    assert rig.state.cam == "alps-koenigssee"

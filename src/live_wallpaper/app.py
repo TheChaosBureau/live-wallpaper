@@ -23,6 +23,16 @@ KEEP_FRAMES = 2
 _INTERVAL_SLACK = timedelta(seconds=30)
 
 
+# Cam ids that changed between versions: old id -> new id. A chosen cam and its
+# offset follow the rename, unless the old id still names a cam.
+RENAMED = {
+    "alps-grossglockner": "alps-freiwandeck",
+    "alps-koenigssee": "alps-funtenseetauern",
+    "alps-walchensee": "alps-herzogstand",
+    "alps-ortler": "alps-trafoi",
+}
+
+
 class UserError(Exception):
     """Something the user asked for cannot be done; the message is for them."""
 
@@ -156,7 +166,15 @@ class App:
     # ---- internals ----------------------------------------------------------
 
     def _load(self) -> State:
-        return load_state(self._paths.state_file)
+        state = load_state(self._paths.state_file)
+        for old, new in RENAMED.items():
+            if old in self._cams or new not in self._cams:
+                continue
+            if state.cam == old:
+                state.cam = new
+            if old in state.offsets:
+                state.offsets.setdefault(new, state.offsets.pop(old))
+        return state
 
     def _save(self, state: State) -> None:
         save_state(self._paths.state_file, state)
