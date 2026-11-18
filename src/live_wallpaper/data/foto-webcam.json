@@ -1,0 +1,2862 @@
+[
+ {
+  "id": "alps-passthurn",
+  "name": "***Aparthotel Hohe Brücke - Pass Thurn - Blick in die Hohen Tauern / Oberpinzgau",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "passthurn",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-adlersruhe",
+  "name": "Adlersruhe / Blick nach Westen zum Großglockner",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "adlersruhe",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-toblach",
+  "name": "Alpenhotel Ratsberg - Toblach - Blick nach Süden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "toblach",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-st-kassian",
+  "name": "Alta Badia / San Cassiano - La Villa",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "st-kassian",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-andelsbuch",
+  "name": "Andelsbuch / Niedere",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "andelsbuch",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-ankogel-sued",
+  "name": "Ankogel Bergbahnen / Mittelstation - Blick nach Südwesten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "ankogel-sued",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-neu-toblach",
+  "name": "Apparthotel Germania - Neu-Toblach - Blick nach Norden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "neu-toblach",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-burgstalleralm",
+  "name": "Astental / Burgstalleralm - Blick nach Südwesten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "burgstalleralm",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-sarstein",
+  "name": "Bad Aussee / Sarstein - Blick nach Nordwesten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "sarstein",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-bad-endorf",
+  "name": "Bad Endorf – „Simssee Blick“, Golddorf Hirnsberg und Chiemgauer Alpen – Mangfallgebirge",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "bad-endorf",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-kirchheimerhof",
+  "name": "Bad Kleinkirchheim - Blick zum Kirchheimerhof",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "kirchheimerhof",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-brunnach",
+  "name": "Bad Kleinkirchheim / Aktiv Park – Biosphärenparkbahn Brunnach",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "brunnach",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-bachlift",
+  "name": "Bad Kleinkirchheim / Bachareal - Blick nach Südosten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "bachlift",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-kaiserburg",
+  "name": "Bad Kleinkirchheim / Blick zur Kaiserburg Bergstation",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "kaiserburg",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-countrytrail",
+  "name": "Bad Kleinkirchheim / Flow Country Trail – Kaiserburgbahn",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "countrytrail",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-maibrunn",
+  "name": "Bad Kleinkirchheim / Maibrunn Berg - Blick auf Sonnenhang",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "maibrunn",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-nockalm-berg",
+  "name": "Bad Kleinkirchheim / Nockalm - Blick nach Bad Kleinkirchheim",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "nockalm-berg",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-rosennockabfahrt",
+  "name": "Bad Kleinkirchheim / Rosennockabfahrt - Blick zum Wiesernock",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "rosennockabfahrt",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-sonnleitenlift",
+  "name": "Bad Kleinkirchheim / Sonnleitenlift - Blick nach Nordwesten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "sonnleitenlift",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-strohsack",
+  "name": "Bad Kleinkirchheim / Strohsack - Blick in den Biosphärenpark Nockberge",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "strohsack",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-kaiserburg-tal",
+  "name": "Bad Kleinkirchheim / Thermenschuss - Blick zur Kaiserburg",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "kaiserburg-tal",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-wiesernock",
+  "name": "Bad Kleinkirchheim / Wiesernock - Blick zum Priedröf",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "wiesernock",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-balderschwang-kreuzle",
+  "name": "Balderschwang / Kreuzle - Blick nach Westen",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "balderschwang-kreuzle",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-zugspitze-nord",
+  "name": "Bayerische Zugspitzbahn - Blick vom Gipfel nach Norden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "zugspitze-nord",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-zugspitze-ost",
+  "name": "Bayerische Zugspitzbahn - Blick über das Höllental nach Osten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "zugspitze-ost",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-bzb-tal",
+  "name": "Bayerische Zugspitzbahn - Seilbahn Zugspitze - Talstation",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "bzb-tal",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-ridnaun",
+  "name": "Becherhaus - Blick nach Südosten ins Ridnauntal",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "ridnaun",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-wildhaus",
+  "name": "Bergbahnen Wildhaus - Gamserrugg mit Blick zum Säntis und Schafberg",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "wildhaus",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-hochmuth",
+  "name": "Berggasthaus Hochmuth - Dorf Tirol / Meran - Blick nach Südosten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "hochmuth",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-ritten",
+  "name": "Berggasthof Plörr - Ritten - Blick nach Südosten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "ritten",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-berghaus-sonnenfels",
+  "name": "Berghaus Sonnenfels / Großer Arber- Blick nach Nordwesten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "berghaus-sonnenfels",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-olang",
+  "name": "Berghotel Zirm - Olang / Geiselsberg",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "olang",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-berlinerhuette",
+  "name": "Berliner Hütte - Blick nach Südwesten zum Waxeggkees",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "berlinerhuette",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-schruns",
+  "name": "Blick über Schruns nach Südwesten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "schruns",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-bludenz",
+  "name": "Bludenz - Blick nach Osten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "bludenz",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-bludenz-zentrum",
+  "name": "Bludenz Zentrum - Blick nach Norden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "bludenz-zentrum",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-bockkogel",
+  "name": "Bockkogel - Blick zum Schrankogel",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "bockkogel",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-braunschweigerhuette",
+  "name": "Braunschweiger Hütte - Blick zum Mittelbergferner und zur Wildspitze",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "braunschweigerhuette",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-bremerhuette",
+  "name": "Bremer Hütte - Blick nach Osten ins Gschnitztal",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "bremerhuette",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-bruneck",
+  "name": "Bruneck - Pustertal / Südtirol - Blick nach Südwesten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "bruneck",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-gernkogel",
+  "name": "Buchau-Hütte am Gernkogel - St. Johann im Pongau - Blick nach Norden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "gernkogel",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-buchkopfturm",
+  "name": "Buchkopfturm - Oppenau-Maisach / Schwarzwald - Blick nach Westen",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "buchkopfturm",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-burg-altpernstein",
+  "name": "Burg Altpernstein - Blick auf Micheldorf und das Kremstal",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "burg-altpernstein",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-stahlhaus",
+  "name": "Carl-von-Stahl-Haus / Berchtesgadener Alpen - Blick nach Süden ins Hagengebirge",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "stahlhaus",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-bardolino",
+  "name": "Color Hotel - Bardolino - Lago di Garda",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "bardolino",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-simonyhuette",
+  "name": "Dachstein / Simonyhütte - Blick zum Hallstättergletscher",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "simonyhuette",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-damuels",
+  "name": "Damüls / Hotel Alpenblume - Blick nach Süden / Faschina",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "damuels",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-hasenbuehel",
+  "name": "Damüls Hasenbühel - Blick nach Süden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "hasenbuehel",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-darmstadt-ost",
+  "name": "Darmstadt - Blick nach Osten zum Hochzeitsturm",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "darmstadt-ost",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-luisenplatz",
+  "name": "Darmstadt - Blick zum Luisenplatz",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "luisenplatz",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-darmstadt-west",
+  "name": "Darmstadt / Blick nach Westen",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "darmstadt-west",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-dellach",
+  "name": "Dellach im Drautal - Blick nach Norden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "dellach",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-langenferner",
+  "name": "Die Gletscher des Cevedale-Gebiets | I ghiacciai del Cevedale - Martell, Südtirol | Val Martello, Alto Adige",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "langenferner",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-trafoi",
+  "name": "Die Gletscher des Ortlergebiets | I ghiacciai del Gruppo dell’Ortles - Trafoi, Südtirol | Valle di Trafoi, Alto Adige",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "trafoi",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-dobratsch",
+  "name": "Dobratsch - Villacher Alpe - Blick nach Westen ins Gailtal",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "dobratsch",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-dolomitenhuette",
+  "name": "Dolomitenhütte - Blick in die Lienzer Dolomiten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "dolomitenhuette",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-st-christina",
+  "name": "Dorfhotel Beludei - St. Christina - Gröden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "st-christina",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-dornbirn",
+  "name": "Dornbirn / Karren - Blick nach Nordwesten zum Bodensee",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "dornbirn",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-schareben",
+  "name": "Drachselsried / Berghütte Schareben 1019m ü. NN - Blick nach Südwesten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "schareben",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-eibsee-hotel",
+  "name": "Eibsee-Hotel - Grainau - Blick nach Südwesten zur Zugspitze",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "eibsee-hotel",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-kiens",
+  "name": "Entdecker Hotel Panorama - Hofern/Kiens - Pustertal",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "kiens",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-heidi-hotel",
+  "name": "Falkertsee - Blick nach Norden zum Heidi-Hotel",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "heidi-hotel",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-fanningberg",
+  "name": "Fanningberg - das schneesichere Familienskigebiet",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "fanningberg",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-feldkirch",
+  "name": "Feldkirch / Blick nach Norden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "feldkirch",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-feldkopf-west",
+  "name": "Feldkopf - Blick nach Westen zum Glödis und Hochschober",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "feldkopf-west",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-fellhorn",
+  "name": "Fellhornbahn Gipfelstation - Oberstdorf - Blick nach Südosten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "fellhorn",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-huebenburg",
+  "name": "Ferienwohnungen Huebenburg - St.Pauls / Eppan - Blick nach Osten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "huebenburg",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-feuersang",
+  "name": "Feuersang - Blick nach Südwesten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "feuersang",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-flattach-west",
+  "name": "Flattach / Flattachberg - Blick nach Westen",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "flattach-west",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-flattach",
+  "name": "Flattach / Grafenberg - Blick zum Appartementhaus Lercher",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "flattach",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-flensburg",
+  "name": "Flensburg / Blick nach Norden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "flensburg",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-frauenau",
+  "name": "Frauenau - Blick nach Nordosten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "frauenau",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-freiwandeck",
+  "name": "Freiwandeck - Blick zum Großglockner",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "freiwandeck",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-funtenseetauern",
+  "name": "Funtenseetauern - Nationalpark Berchtesgaden - Blick über den Königssee nach Norden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "funtenseetauern",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-furkajoch",
+  "name": "Furkajoch - Blick nach Westen",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "furkajoch",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-gamshuette",
+  "name": "Gamshütte / Zillertal - Blick nach Südosten zum Tristner",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "gamshuette",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-gantkofel",
+  "name": "Gantkofel / Mt. Macaion - Blick über Bozen in die Dolomiten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "gantkofel",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-gargellen",
+  "name": "Gargellen - Blick nach Nordosten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "gargellen",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-gargellen-sued",
+  "name": "Gargellen Süd / Kristallbahn Berg - Blick Richtung Schafberg Plateau - Madrisa",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "gargellen-sued",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-gargellen-west",
+  "name": "Gargellen West / Kristallbahn Berg - Blick Richtung Täli - St. Antönier Joch",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "gargellen-west",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-eppan-berg",
+  "name": "Gasthof Steinegger - Eppan Berg - Blick nach Osten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "eppan-berg",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-gjaidstein",
+  "name": "Gjaidstein - Blick zum Hohen Dachstein und zum Hallstätter Gletscher",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "gjaidstein",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-glecksteinhuette",
+  "name": "Glecksteinhütte - Blick nach Westen",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "glecksteinhuette",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-glocknerwinkel",
+  "name": "Glocknerwinkel / Blick nach Norden zum Großglockner",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "glocknerwinkel",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-traunstein-sued",
+  "name": "Gmundner Hütte am Traunstein - Oberösterreich - Blick nach Süden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "traunstein-sued",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-traunstein",
+  "name": "Gmundner Hütte am Traunstein - Oberösterreich - Blick nach Westen",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "traunstein",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-gnesau",
+  "name": "Gnesau - Blick nach Südosten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "gnesau",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-goldbergkees",
+  "name": "Goldbergkees - Blick nach Südosten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "goldbergkees",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-goldbergkees2",
+  "name": "Goldbergkees 2 / Blick nach Nordwesten zum Hohen Sonnblick",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "goldbergkees2",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-grandsberg",
+  "name": "Grandsberg - Schwarzach / Bayerischer Wald - Blick nach Süden zur Donauebene",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "grandsberg",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-asitz",
+  "name": "Großer Asitz Gipfelkreuz - Blick in die Leoganger Steinberge",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "asitz",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-feldberg-ts",
+  "name": "Großer Feldberg im Taunus - Blick über Frankfurt nach Südosten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "feldberg-ts",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-gsteig",
+  "name": "Gsteig - Blick zur Zugspitze",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "gsteig",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-gummer",
+  "name": "Gummer / Sternwarte Max Valier - Blick nach Südosten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "gummer",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-hagener-huette",
+  "name": "Hagener Hütte - Blick nach Südwesten zum Vorderen Geißlkopf",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "hagener-huette",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-hanuselhof-west",
+  "name": "Hanusel Hof - Golf und Wellness Hotel im Allgäu - Blick nach Westen",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "hanuselhof-west",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-hausberg",
+  "name": "Hausberg - Garmisch-Classic - Blick nach Südwesten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "hausberg",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-falkert-nord",
+  "name": "Heidi Alm Falkert - Blick nach Nordosten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "falkert-nord",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-falkert",
+  "name": "Heidi Alm Falkert - Blick nach Westen zum Falkertspitz",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "falkert",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-heidi-chalets",
+  "name": "Heidi-Chalets - UNESCO-Weltnaturerbe Falkertsee 1.850m - Blick Richtung Falkertspitz",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "heidi-chalets",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-skiflugschanze",
+  "name": "Heini-Klopfer-Skiflugschanze - Oberstdorf - Blick nach Nordosten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "skiflugschanze",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-schwaigerhaus",
+  "name": "Heinrich-Schwaiger-Haus - Kaprun Hochgebirgsstauseen - Blick nach Westen",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "schwaigerhaus",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-helmut-list-halle",
+  "name": "Helmut List Halle / Graz - Blick nach Südosten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "helmut-list-halle",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-kochelsee",
+  "name": "Herzogstand / Fahrenbergkopf - Blick über den Kochelsee ins Oberland",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "kochelsee",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-herzogstand",
+  "name": "Herzogstand / Fahrenbergkopf - Blick über den Walchensee ins Karwendel",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "herzogstand",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-hintereisferner2",
+  "name": "Hintereisferner - Blick Richtung Hintere Hintereisspitze",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "hintereisferner2",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-hintereisferner1",
+  "name": "Hintereisferner - Blick Richtung Weißkugel und Langtaufererspitze",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "hintereisferner1",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-hochblauen",
+  "name": "Hochblauen / Schwarzwald - Blick ins Rheintal",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "hochblauen",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-hochhamm",
+  "name": "Hochhamm - Blick nach Südosten zum Säntis",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "hochhamm",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-ettelsberg",
+  "name": "Hochheideturm - Ettelsberg/Sauerland – Blick über Willingen Richtung Norden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "ettelsberg",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-hochkar",
+  "name": "Hochkar - Blick über Wildalpen nach Südosten zum Hochschwab",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "hochkar",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-hochleckenhaus",
+  "name": "Hochleckenhaus - Blick nach Westnordwesten ins Alpenvorland mit Mondsee und Attersee",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "hochleckenhaus",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-hochries-ost",
+  "name": "Hochries Bergstation - Blick nach Nordosten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "hochries-ost",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-hochries-nord",
+  "name": "Hochrieshütte - DAV Sektion Rosenheim - Blick nach Norden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "hochries-nord",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-hochries-sued",
+  "name": "Hochrieshütte - DAV Sektion Rosenheim - Blick nach Süden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "hochries-sued",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-hochries",
+  "name": "Hochrieshütte - DAV Sektion Rosenheim - Blick nach Westen",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "hochries",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-hochwolkersdorf",
+  "name": "Hochwolkersdorf / Blick nach Südwesten in die Bucklige Welt",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "hochwolkersdorf",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-peissenberg",
+  "name": "Hohenpeißenberg / Restaurant Bayerischer Rigi - Blick nach Osten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "peissenberg",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-hoherkasten",
+  "name": "Hoher Kasten / Drehrestaurant - Blick nach Südosten ins Rheintal",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "hoherkasten",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-hopfgarten",
+  "name": "Hopfgarten im Defereggental - Blick nach Osten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "hopfgarten",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-eppan",
+  "name": "Hotel Ansitz Rungghof / Girlan Eppan - Blick nach Nordwesten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "eppan",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-obertauern3",
+  "name": "Hotel Das Seekarhaus Obertauern",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "obertauern3",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-graun",
+  "name": "Hotel Langtaufererhof - Graun im Vinschgau",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "graun",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-mals",
+  "name": "Hotel Watles - Mals / Vinschgau - Blick nach Südosten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "mals",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-hundsfeldsee",
+  "name": "Hundsfeldsee - Obertauern - Blick zum Seekarhaus",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "hundsfeldsee",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-grimming",
+  "name": "Irdning - Blick nach Nordwesten zum Grimming",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "grimming",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-jenner-sued",
+  "name": "Jennerbahn am Königssee - Blick ins Hagengebirge und zum Steinernen Meer",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "jenner-sued",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-jenner-ost",
+  "name": "Jennerbahn am Königssee - Blick nach Osten zum Hohen Brett",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "jenner-ost",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-norderney",
+  "name": "Kaiserhof - Norderney / Ostfriesland - Blick Richtung Nordwesten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "norderney",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-kals-nord",
+  "name": "Kals am Großglockner - Blick nach Nordosten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "kals-nord",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-kals",
+  "name": "Kals am Großglockner - Blick nach Westen",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "kals",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-kalsertal",
+  "name": "Kalsertal - Blick nach Norden zum Großglockner",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "kalsertal",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-das-kaltenbach",
+  "name": "Kaltenbach - Zillertal - Blick nach Norden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "das-kaltenbach",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-kampenwand",
+  "name": "Kampenwand / Andachtskreuz - Blick nach Norden über den Chiemsee",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "kampenwand",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-kandahar-express",
+  "name": "Kandahar-Express am Kreuzjoch - Garmisch-Classic - Blick nach Nordosten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "kandahar-express",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-mooserboden",
+  "name": "Kaprun Hochgebirgsstauseen - Mooserboden - Blick Richtung Wiesbachhorn",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "mooserboden",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-wasserfallboden",
+  "name": "Kaprun Hochgebirgsstauseen - Wasserfallboden - Blick nach Osten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "wasserfallboden",
+  "interval_minutes": 60,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-zielhaus-hahnenkamm",
+  "name": "Kitzbühel / Zielhaus Hahnenkamm - Blick nach Osten in die Südberge",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "zielhaus-hahnenkamm",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-kleinfleisskees",
+  "name": "Kleinfleißkees - Blick nach Nordosten zum Hohen Sonnblick",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "kleinfleisskees",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-kueren",
+  "name": "Kleinwalsertal / Alpenhotel DAS KÜREN - Blick nach Südosten ins Wäldele",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "kueren",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-sonnblickbasis",
+  "name": "Kolm-Saigurn / Naturfreundehaus - Blick nach Süden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "sonnblickbasis",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-konkordiahuette",
+  "name": "Konkordiahütte - Unesco Weltnaturerbe Jungfrau - Aletsch",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "konkordiahuette",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-kreuzeck",
+  "name": "Kreuzeck Bergstation - Garmisch-Classic - Blick zur Alpspitze und Zugspitze",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "kreuzeck",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-kreuzspitze",
+  "name": "Kreuzspitze / Villgratental - Blick nach Innervillgraten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "kreuzspitze",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-kronplatz",
+  "name": "Kronplatz - Bruneck / Pustertal - Blick nach Norden über das Tauferer Tal",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "kronplatz",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-funtensee",
+  "name": "Kärlingerhaus am Funtensee - Blick nach Südosten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "funtensee",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-koerbersee",
+  "name": "Körbersee / Schröcken - Schönster Platz Österreichs 2017",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "koerbersee",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-grossvenediger",
+  "name": "Kürsingerhütte - Blick nach Osten zum Großvenediger",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "grossvenediger",
+  "interval_minutes": 60,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-kuersingerhuette",
+  "name": "Kürsingerhütte - Blick nach Süden zum Großen Geiger",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "kuersingerhuette",
+  "interval_minutes": 60,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-oberlech",
+  "name": "Lech / Pension Bergland - Blick nach Süden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "oberlech",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-lech",
+  "name": "Lech am Arlberg - Blick nach Südwest ins Zugertal",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "lech",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-annamarialech",
+  "name": "Lech am Arlberg / Chalet Anna Maria - Blick nach Norden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "annamarialech",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-haldenhof",
+  "name": "Lech am Arlberg / Haldenhof - Blick nach Südwesten zum Omeshorn",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "haldenhof",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-ruefikopf",
+  "name": "Lech am Arlberg / Rüfikopf - Blick nach Süden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "ruefikopf",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-schmelzhof",
+  "name": "Lech am Arlberg, Schlegelkopf",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "schmelzhof",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-leutasch",
+  "name": "Leutasch - Blick nach Südosten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "leutasch",
+  "interval_minutes": 60,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-lienz",
+  "name": "Lienz / Zettersfeld - Blick in die Lienzer Dolomiten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "lienz",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-faschingalm",
+  "name": "Lienz / Zettersfeld - Blick ins Skigebiet Faschingalm",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "faschingalm",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-liesgelespitz",
+  "name": "Liesgelespitz - Blick nach Südosten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "liesgelespitz",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-muenchen",
+  "name": "LMU-Klinikum München-Großhadern - Blick nach Nordost / München-Innenstadt",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "muenchen",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-lmu-klinikum",
+  "name": "LMU-Klinikum München-Großhadern - Blick nach Süden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "lmu-klinikum",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-lucknerhaus",
+  "name": "Lucknerhaus - Blick zum Großglockner",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "lucknerhaus",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-luesen",
+  "name": "Lüsen / Gruberhof - Blick nach Südwesten in die Sarntaler Alpen",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "luesen",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-sausteige",
+  "name": "Maishofen / Sausteige - Blick nach Südosten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "sausteige",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-maishofen",
+  "name": "Maishofen Dorfplatz - Blick nach Osten zur Schwalbenwand",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "maishofen",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-malcesine",
+  "name": "Malcesine Val di Sogno / Stickl Sportcamp - Blick nach Campione",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "malcesine",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-auernig",
+  "name": "Mallnitz / Auernig - Blick nach Nordwesten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "auernig",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-meran",
+  "name": "Marlinger Berg - Meran - Blick nach Nordosten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "meran",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-marquartstein",
+  "name": "Marquartstein / Schnappenberg - Blick übers Achental nach Südwesten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "marquartstein",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-hochkoenig",
+  "name": "Matrashaus am Hochkönig - Blick über den Königsjodler nach Südwesten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "hochkoenig",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-bethuberhof",
+  "name": "Matrei in Osttirol / Bethuberhof - Blick nach Norden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "bethuberhof",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-steigerhof",
+  "name": "Matrei in Osttirol / Steigerhof - Blick nach Westen",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "steigerhof",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-strumerhof",
+  "name": "Matrei in Osttirol / Strumerhof - Blick nach Südosten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "strumerhof",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-meilerhuette",
+  "name": "Meilerhütte - Wetterstein - Blick nach Nordwesten zur Zugspitze",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "meilerhuette",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-meilerhuette-haus",
+  "name": "Meilerhütte - Wetterstein - Blick zur Hütte",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "meilerhuette-haus",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-murnau",
+  "name": "Murnau am Staffelsee / Blick nach Süden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "murnau",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-gletscher-alteck",
+  "name": "Mölltaler Gletscher / Bergstation Altecklift - Blick nach Nordosten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "gletscher-alteck",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-gletscher-sued",
+  "name": "Mölltaler Gletscher / Bergstation Gondelbahn Eissee - Blick nach Südwesten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "gletscher-sued",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-gletscher-nord",
+  "name": "Mölltaler Gletscher / Bergstation Panoramabahn Klühspies - Blick nach Nordosten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "gletscher-nord",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-gletscher-schwarzkopf",
+  "name": "Mölltaler Gletscher / Bergstation Schwarzkopflift - Blick nach Nordwesten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "gletscher-schwarzkopf",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-gletscher-schareck",
+  "name": "Mölltaler Gletscher / Schareck - Blick nach Westen",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "gletscher-schareck",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-moertschach",
+  "name": "Mörtschach / Mörtschachberg - Blick in die Lienzer Dolomiten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "moertschach",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-lorenzalm",
+  "name": "Mörtschach im Mölltal / Lorenzalm - Blick nach Norden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "lorenzalm",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-amonti",
+  "name": "Mühlen in Taufers / AMONTI Chalets",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "amonti",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-naturns",
+  "name": "NATURNS - PLAUS bei Meran / Blick Richtung Meran – Hotels Villa Etschland / Plauserhof",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "naturns",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-nebelhorn",
+  "name": "Nebelhornbahn Gipfelstation - Oberstdorf - Blick nach Südosten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "nebelhorn",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-mayrhofen",
+  "name": "Neuhaus Zillertal Resort / Mayrhofen - Blick nach Südwesten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "mayrhofen",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-obermaiselstein",
+  "name": "Obermaiselstein / Großer Herrenberg - Blick nach Osten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "obermaiselstein",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-oberpfalzturm2",
+  "name": "Oberpfalzturm / Steinwald - Blick Richtung Erbendorf",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "oberpfalzturm2",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-oberstaufen",
+  "name": "Oberstaufen / Haubers Naturresort - Blick nach Südwesten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "oberstaufen",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-scheibenhaus",
+  "name": "Oberstdorf / Scheibenhaus - Blick nach Süden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "scheibenhaus",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-oberwalderhuette",
+  "name": "Oberwalderhütte - Blick nach Süden zum Großglockner",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "oberwalderhuette",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-tum-olympiapark",
+  "name": "Olympiaturm München - Baustelle TUM Campus im Olympiapark",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "tum-olympiapark",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-pendling-ost",
+  "name": "Pendlinghaus - Kufstein - Blick nach Osten ins Kaisergebirge",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "pendling-ost",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-pendling-west",
+  "name": "Pendlinghaus - Kufstein - Blick über Hinterthiersee nach Nordwesten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "pendling-west",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-chavalatsch",
+  "name": "Piz Chavalatsch - Sulden / Vinschgau - Blick nach Südosten zum Ortler",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "chavalatsch",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-pizol",
+  "name": "Pizol - Bad Ragaz - Wangs / Blick nach Norden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "pizol",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-schulterkogel",
+  "name": "Prebl / Schulterkogelhütte - Blick nach Südosten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "schulterkogel",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-poertschach-a-w",
+  "name": "Pörtschach am Wörthersee - Windischberg - Blick nach Südosten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "poertschach-a-w",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-hotel-lindenhof",
+  "name": "Ramsau / Lindenhof - Ramsbergerhof - Blick zum Dachstein",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "hotel-lindenhof",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-ederplan",
+  "name": "Rangersdorf / Ederplan - Blick nach Nordosten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "ederplan",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-rangersdorf",
+  "name": "Rangersdorf / Hotel Margarethenbad - Blick nach Nordosten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "rangersdorf",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-rauris",
+  "name": "Rauris / Gamskopf - Blick nach Norden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "rauris",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-hochstaufen",
+  "name": "Reichenhaller Haus am Hochstaufen - Blick über Bad Reichenhall nach Süden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "hochstaufen",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-salzburg",
+  "name": "Reichenhaller Haus am Hochstaufen - Blick über Salzburg nach Osten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "salzburg",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-rittnerhorn",
+  "name": "Rittner Horn - Blick über das Grödnertal zur Sellagruppe",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "rittnerhorn",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-russkopf",
+  "name": "Rußkopf - Blick nach Südwesten zum Jamtalferner",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "russkopf",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-roethis-ost",
+  "name": "Röthis - METZLER GmbH & Co KG - Blick nach Osten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "roethis-ost",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-roethis-west",
+  "name": "Röthis - METZLER GmbH & Co KG - Blick nach Westen",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "roethis-west",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-lofer",
+  "name": "Saalach - Teufelssteg | lofer.com",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "lofer",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-saalfelden",
+  "name": "Saalfelden / Ritzensee - Blick nach Norden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "saalfelden",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-samerberg",
+  "name": "Samerberg - Blick über Törwang zur Hochries",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "samerberg",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-schleching",
+  "name": "Schleching / Gscheuerwand - Blick nach Westen",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "schleching",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-schlegeis",
+  "name": "Schlegeis Stausee - Zillertaler Alpen - Blick nach Süden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "schlegeis",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-schroecken",
+  "name": "Schröcken - Blick nach Nordwesten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "schroecken",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-schwarzenbach",
+  "name": "Schwarzenbach / Johann Giefing Aussichtsturm - Blick nach Westen",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "schwarzenbach",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-schwaerzenlifte",
+  "name": "Schwärzenlifte - Eschach / Oberallgäu - Blick zum Gletschergumpen und zur Gletscheralp",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "schwaerzenlifte",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-moesern",
+  "name": "Seefeld / Friedensglocke Mösern - Blick nach Westen ins Inntal",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "moesern",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-seefeld",
+  "name": "Seefeld in Tirol / Brunschkopf - Blick nach Osten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "seefeld",
+  "interval_minutes": 60,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-innsbruck",
+  "name": "Seegrube - Innsbruck - Blick nach Süden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "innsbruck",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-obertauern2",
+  "name": "Seekarhaus Obertauern - Bergstation Seekarspitzbahn",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "obertauern2",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-obertauern1",
+  "name": "Seekarhaus Obertauern - Talstation Seekarspitzbahn",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "obertauern1",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-bzb-gipfel",
+  "name": "Seilbahn Zugspitze - Blick zum Gipfel von Westen",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "bzb-gipfel",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-eibsee-nord",
+  "name": "Seilbahn Zugspitze - Weltrekord-Stütze - Blick über den Eibsee nach Norden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "eibsee-nord",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-zallinger",
+  "name": "Seiser Alm / Zallinger - Blick nach Westen zum Schlern",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "zallinger",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-sexten-sued",
+  "name": "Sexten / Berghotel - Blick nach Süden zur Sextner Sonnenuhr",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "sexten-sued",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-sexten-west",
+  "name": "Sexten / Berghotel - Blick nach Westen",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "sexten-west",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-sibratsgfaell",
+  "name": "Sibratsgfäll / Bregenzerwald- Blick nach Südosten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "sibratsgfaell",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-sonnalpin",
+  "name": "Sonnalpin - Gletscher-Skigebiet Zugspitze - Blick zum Schneefernerkopf",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "sonnalpin",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-sonnblick",
+  "name": "Sonnblick Observatorium - Blick nach Südwesten Richtung Lienzer Dolomiten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "sonnblick",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-sonthofen",
+  "name": "Sonthofen / Oberallgäu – Blick vom Sonthofer Hof nach Nordwesten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "sonthofen",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-ewa",
+  "name": "St. Anton / Wasserschloss KW Kartell - Blick nach Norden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "ewa",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-st-anton",
+  "name": "St. Anton am Arlberg / Galzig - Blick nach Osten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "st-anton",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-stjakob",
+  "name": "St. Jakob in Defereggen - Blick nach Osten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "stjakob",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-st-johann-in-tirol",
+  "name": "St. Johann in Tirol - Blick zum Kitzbüheler Horn",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "st-johann-in-tirol",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-st-johann-in-tirol-west",
+  "name": "St. Johann in Tirol - Blick zum Kitzbüheler Horn und Wilder Kaiser",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "st-johann-in-tirol-west",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-wilder-kaiser",
+  "name": "St. Johann in Tirol - Blick zum Wilden Kaiser",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "wilder-kaiser",
+  "interval_minutes": 60,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-pointenhof",
+  "name": "St. Johann in Tirol – Blick zur Jodlalmbahn-Baustelle",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "pointenhof",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-stveit",
+  "name": "St.Veit im Defereggental - Blick nach Westen",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "stveit",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-jachenau",
+  "name": "Staffel / Jachenau - Blick nach Norden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "jachenau",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-krakau",
+  "name": "Steirische Krakau / Klausen - Blick nach Nordwesten zum Preber",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "krakau",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-stoehrhaus",
+  "name": "Stöhrhaus am Untersberg - Blick über Berchtesgaden nach Süden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "stoehrhaus",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-sulzkogel",
+  "name": "Sulzkogel - Blick nach Südosten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "sulzkogel",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-hackelhuette",
+  "name": "Söldenhütte - Blick nach Südwesten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "hackelhuette",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-hackelhuette-nord",
+  "name": "Söldenhütte Nord - Blick nach Norden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "hackelhuette-nord",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-tannheimertal",
+  "name": "Tannheimertal - Blick nach Osten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "tannheimertal",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-tegelberg",
+  "name": "Tegelberg - Ostallgäu - Blick auf Füssen, Schwangau und den Forggensee",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "tegelberg",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-tisenjoch",
+  "name": "Tisenjoch - Blick nach Südwesten zur Ötzi Fundstelle",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "tisenjoch",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-dreizinnenblick",
+  "name": "Toblach / Dobbiaco - Drei-Zinnen-Blick / Vista Tre Cime / View of the Three Peaks",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "dreizinnenblick",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-trins",
+  "name": "Trins / Adlerblick - Blick nach Südwesten ins Gschnitztal",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "trins",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-tristner",
+  "name": "Tristner - Ginzling / Zillertal - Blick nach Südwesten zum Schlegeis",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "tristner",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-tschagguns",
+  "name": "Tschagguns / Montafon Nordic Schanzenzentrum - Blick nach NO",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "tschagguns",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-turrach-ost",
+  "name": "Turracher Höhe / Hirschkogel - Blick nach Osten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "turrach-ost",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-turrach-west",
+  "name": "Turracher Höhe / Weitentallift Berg - Blick auf den Turracher See",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "turrach-west",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-hotel-berghaus",
+  "name": "Tux / Alpinhotel Berghaus - Blick nach Südwesten zum Hintertuxer Gletscher",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "hotel-berghaus",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-toelzer-huette",
+  "name": "Tölzer Hütte am Schafreuter - Blick ins Karwendel",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "toelzer-huette",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-innsbruck-uni",
+  "name": "Universität Innsbruck / Blick nach Nordosten ins Unterinntal",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "innsbruck-uni",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-innsbruck-uni-west",
+  "name": "Universität Innsbruck / Blick nach Westen",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "innsbruck-uni-west",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-unterammergau",
+  "name": "Unterammergau - Blick nach Südwesten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "unterammergau",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-jamtalferner",
+  "name": "Urezzasjoch - Blick nach Nordwesten zum Jamtalferner",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "jamtalferner",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-fuerstenfeld",
+  "name": "Veranstaltungsforum Fürstenfeld - Blick zur Klosterkirche",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "fuerstenfeld",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-virgen-west",
+  "name": "Virgen / Sonnberg - Blick nach Westen",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "virgen-west",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-virgen-nord",
+  "name": "Virgen / Würfelehütte - Blick nach Norden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "virgen-nord",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-vorderloiplsau",
+  "name": "Vorderloiplsau - Berchtesgadener Land - Blick zum Hochkalter und zur Reiteralm",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "vorderloiplsau",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-vorderaelpele",
+  "name": "Vorderälpele / Frastanz - Blick ins Rheintal",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "vorderaelpele",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-waldwipfelweg",
+  "name": "Waldwipfelweg.de - Maibrunn / Bayerischer Wald - Blick nach Süden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "waldwipfelweg",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-wallackhaus-nord",
+  "name": "Wallackhaus RegioJet Hotels - Heiligenblut - Blick nach Norden zum Hochtor",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "wallackhaus-nord",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-wallackhaus",
+  "name": "Wallackhaus RegioJet Hotels - Heiligenblut - Blick nach Süden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "wallackhaus",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-feldkopf",
+  "name": "Wangenitztal / Feldkopf - Blick über den Wangenitzsee nach Osten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "feldkopf",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-tuxertal",
+  "name": "Wanglspitz - Tuxertal - Blick nach Südwesten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "tuxertal",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-wank",
+  "name": "Wankhaus - Garmisch-Partenkirchen - Blick nach Südwesten zur Zugspitze",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "wank",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-wannenkogel",
+  "name": "Wannenkogel - Blick zum Schrankogel",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "wannenkogel",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-weissbrunnferner",
+  "name": "Weißbrunnferner | Ghiacciaio di Fontana Bianca - Ulten, Südtirol | Val d’Ultimo, Alto Adige",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "weissbrunnferner",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-wendelstein-ost",
+  "name": "Wendelsteinbahn Bergstation - Gacher Blick nach Südosten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "wendelstein-ost",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-wendelstein-west",
+  "name": "Wendelsteinbahn Bergstation - Gacher Blick nach Südwesten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "wendelstein-west",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-wetteronline-bonn",
+  "name": "WetterOnline Bonn - Blick auf die Friedrich-Ebert-Brücke",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "wetteronline-bonn",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-zugspitze-sued",
+  "name": "Wetterwarte Zugspitze - Blick über das Zugspitzplatt nach Süden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "zugspitze-sued",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-zugspitze",
+  "name": "Wetterwarte Zugspitze - Blick über den Gipfel nach Osten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "zugspitze",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-bisamberg",
+  "name": "Wien / Bisamberg - Blick nach Süden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "bisamberg",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-wien",
+  "name": "Wien-Donaustadt - Blick von der UBIMET-Zentrale nach Südwesten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "wien",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-wildalpen",
+  "name": "Wildalpen - Blick nach Süden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "wildalpen",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-windbeutelbaron",
+  "name": "Windbeutelbaron - Obersalzberg / Berchtesgaden - Blick zum Watzmann",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "windbeutelbaron",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-winklern",
+  "name": "Winklern im Mölltal / Penzelberg - Blick nach Osten",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "winklern",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-zechneralm",
+  "name": "Zechneralm / Nockalmstraße - Blick nach Süden",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "zechneralm",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-zellamsee",
+  "name": "Zell am See-Kaprun - Blick zum Kitzsteinhorn und zur Schmittenhöhe",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "zellamsee",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ },
+ {
+  "id": "alps-becherhaus",
+  "name": "Übeltalferner | Ghiacciaio di Malavalle - Ridnaun, Südtirol | Val Ridanna, Alto Adige",
+  "kind": "foto-webcam",
+  "url": "https://www.foto-webcam.eu",
+  "cam": "becherhaus",
+  "interval_minutes": 10,
+  "fit": "scaled",
+  "credit": "www.foto-webcam.eu"
+ }
+]

@@ -66,7 +66,7 @@ The package ships with these cams:
 | `earth-west`, `earth-east` | NOAA GOES satellites | US government works, public domain |
 | `yosemite-high-sierra`, `yosemite-falls`, `yosemite-half-dome`, `yosemite-el-capitan`, `yosemite-wawona-dome` | [Yosemite Conservancy](https://yosemite.org/webcams/) | Shown whole, never cropped; each frame carries the Conservancy's logo |
 | `huntington-beach` | Huntington Beach pier, hosted by Pixelcaster | |
-| `alps-zugspitze`, `alps-grossglockner`, `alps-koenigssee`, `alps-walchensee`, `alps-ortler` | [foto-webcam.eu](https://www.foto-webcam.eu/) | Shown whole with a `www.foto-webcam.eu` credit on every frame; these support a time offset |
+| `alps-…` (286 cams, for example `alps-zugspitze`) | [foto-webcam.eu](https://www.foto-webcam.eu/) | Every running camera of the site's own. Shown whole with a `www.foto-webcam.eu` credit on every frame; these support a time offset |
 
 The pictures belong to the people who run the cameras, not to this project. If
 you run one of these cameras and would like it shown differently, credited
@@ -119,11 +119,15 @@ stretching, so cams from that site should carry their name and show the whole im
 }
 ```
 
-This project is not affiliated with foto-webcam.eu. It ships five of its cameras,
-set up exactly as above, and its operators have been asked whether that is all
-right with them; the list will follow their answer. If you add more, read the
-"Webcam-Infos" page of each camera first. And visit the site itself: the archive
-and the full-size pictures there are worth it.
+This project is not affiliated with foto-webcam.eu. It ships the site's own
+running cameras, each set up exactly as above, and its operators have been asked
+whether that is all right with them; the list will follow their answer. The list
+is a snapshot made by `tools/update_foto_webcam.py`, which reads the site's public
+camera index and checks each camera once without downloading any picture. And
+visit the site itself: the archive and the full-size pictures there are worth it.
+
+With this many cams, "Pick cam…" first asks for part of a name (a place, a
+mountain, a country) and then shows the matches.
 
 ### Fields
 

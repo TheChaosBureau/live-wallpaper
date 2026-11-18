@@ -71,7 +71,7 @@ def env(tmp_path, monkeypatch):
 
 
 def test_cli_pick_cancel_changes_nothing(env, monkeypatch):
-    monkeypatch.setattr(dialogs, "pick_cam", lambda cams, current: None)
+    monkeypatch.setattr(dialogs, "choose_cam", lambda cams, current: None)
     assert cli.main(["pick"]) == 0
     assert load_state(env / "state" / "live-wallpaper" / "state.json") == State()
 
@@ -104,3 +104,45 @@ def test_cam_name_is_escaped_in_the_offset_dialog():
     run = Run("3\n")
     dialogs.pick_offset(cam, 0, run)
     assert "--text=Zell &amp; Kaprun: hours behind live" in run.calls[0]
+
+
+def test_filter_cams_matches_any_word_case_insensitively_in_name_or_id():
+    from live_wallpaper.dialogs import filter_cams
+    assert [c.id for c in filter_cams(CAMS, "ZUG")] == ["zug"]
+    assert [c.id for c in filter_cams(CAMS, "cam a")] == ["a"]
+    assert [c.id for c in filter_cams(CAMS, "  ")] == ["a", "zug"]
+    assert filter_cams(CAMS, "nothing-like-this") == []
+
+
+def test_ask_filter_returns_text_or_none_on_cancel():
+    run = Run("glock\n")
+    assert dialogs.ask_filter(300, run) == "glock"
+    assert run.calls[0][:2] == ["zenity", "--entry"]
+    assert dialogs.ask_filter(300, Run(returncode=1)) is None
+
+
+def many_cams(n):
+    return parse_cams([{"id": f"c{i}", "name": f"Cam {i}", "kind": "latest", "url": "https://a.example/x.jpg"}
+                       for i in range(n)])
+
+
+def test_choose_cam_asks_for_a_filter_only_when_the_list_is_long(monkeypatch):
+    asked = []
+    monkeypatch.setattr(dialogs, "ask_filter", lambda count, run=None: asked.append(count) or "cam 79")
+    monkeypatch.setattr(dialogs, "pick_cam", lambda cams, current, run=None: [c.id for c in cams])
+    assert dialogs.choose_cam(CAMS, None) == ["a", "zug"] and asked == []
+    assert dialogs.choose_cam(many_cams(80), None) == ["c79"] and asked == [80]
+
+
+def test_choose_cam_cancel_at_the_filter_changes_nothing(monkeypatch):
+    monkeypatch.setattr(dialogs, "ask_filter", lambda count, run=None: None)
+    monkeypatch.setattr(dialogs, "pick_cam", lambda *a, **k: pytest.fail("must not show the list"))
+    assert dialogs.choose_cam(many_cams(80), None) is None
+
+
+def test_choose_cam_tells_the_user_when_nothing_matches(monkeypatch):
+    said = []
+    monkeypatch.setattr(dialogs, "ask_filter", lambda count, run=None: "zzz")
+    monkeypatch.setattr(dialogs, "show_message", lambda text, run=None: said.append(text))
+    monkeypatch.setattr(dialogs, "pick_cam", lambda *a, **k: pytest.fail("must not show the list"))
+    assert dialogs.choose_cam(many_cams(80), None) is None and "zzz" in said[0]

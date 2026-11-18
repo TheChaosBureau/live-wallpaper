@@ -128,11 +128,15 @@ def load_cams(paths: list[Path]) -> dict[str, Cam]:
     return cams
 
 
+BUILTIN_FILES = 2
+
+
 def default_cam_paths(env: dict[str, str] | None = None) -> list[Path]:
     env = os.environ if env is None else env
     config = env.get("XDG_CONFIG_HOME") or os.path.join(env.get("HOME", "/"), ".config")
     return [
         Path(__file__).parent / "data" / "cams.json",
+        Path(__file__).parent / "data" / "foto-webcam.json",
         Path("/etc/live-wallpaper/cams.json"),
         Path(config) / "live-wallpaper" / "cams.json",
     ]

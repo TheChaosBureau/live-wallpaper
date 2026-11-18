@@ -55,55 +55,5 @@
     "name": "Huntington Beach pier",
     "kind": "latest",
     "url": "https://cdn.pixelcaster.com/public.pixelcaster.com/snapshots/hb-innocean/latest.jpg"
-  },
-  {
-    "id": "alps-zugspitze",
-    "name": "Alps: Zugspitze summit",
-    "kind": "foto-webcam",
-    "url": "https://www.foto-webcam.eu",
-    "cam": "zugspitze",
-    "interval_minutes": 10,
-    "fit": "scaled",
-    "credit": "www.foto-webcam.eu"
-  },
-  {
-    "id": "alps-grossglockner",
-    "name": "Alps: Grossglockner from Freiwandeck",
-    "kind": "foto-webcam",
-    "url": "https://www.foto-webcam.eu",
-    "cam": "freiwandeck",
-    "interval_minutes": 10,
-    "fit": "scaled",
-    "credit": "www.foto-webcam.eu"
-  },
-  {
-    "id": "alps-koenigssee",
-    "name": "Alps: Königssee from Funtenseetauern",
-    "kind": "foto-webcam",
-    "url": "https://www.foto-webcam.eu",
-    "cam": "funtenseetauern",
-    "interval_minutes": 10,
-    "fit": "scaled",
-    "credit": "www.foto-webcam.eu"
-  },
-  {
-    "id": "alps-walchensee",
-    "name": "Alps: Walchensee from Herzogstand",
-    "kind": "foto-webcam",
-    "url": "https://www.foto-webcam.eu",
-    "cam": "herzogstand",
-    "interval_minutes": 10,
-    "fit": "scaled",
-    "credit": "www.foto-webcam.eu"
-  },
-  {
-    "id": "alps-ortler",
-    "name": "Alps: Ortler glaciers from Trafoi",
-    "kind": "foto-webcam",
-    "url": "https://www.foto-webcam.eu",
-    "cam": "trafoi",
-    "interval_minutes": 10,
-    "fit": "scaled",
-    "credit": "www.foto-webcam.eu"
   }
 ]
