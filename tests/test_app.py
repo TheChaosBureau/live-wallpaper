@@ -178,7 +178,7 @@ def test_offset_remembered_per_cam(rig):
 
 
 def test_steps_back_when_frame_missing(rig):
-    save_state(rig.paths.state_file, State(offsets={"zug": 9}))
+    save_state(rig.paths.state_file, State(offset=9))
     del rig.fetcher.responses[zug("2026/11/17/1400")]
     rig.fetcher.responses[zug("2026/11/17/1340")] = Fetched("ok", JPEG, None)
     rig.app.use("zug")
@@ -188,7 +188,7 @@ def test_steps_back_when_frame_missing(rig):
 
 def test_steps_back_when_the_archive_answers_an_error_code(rig):
     # foto-webcam.eu answers 502, not 404, for a frame it does not have (seen live 2026-11-17)
-    save_state(rig.paths.state_file, State(offsets={"zug": 9}))
+    save_state(rig.paths.state_file, State(offset=9))
     rig.fetcher.responses[zug("2026/11/17/1400")] = FetchError("www.foto-webcam.eu answered 502", status=502)
     rig.fetcher.responses[zug("2026/11/17/1350")] = Fetched("ok", JPEG, None)
     rig.app.use("zug")
@@ -198,14 +198,14 @@ def test_steps_back_when_the_archive_answers_an_error_code(rig):
 def test_every_archive_frame_failing_reports_the_server_error(rig):
     for minute in ("1400", "1350", "1340", "1330", "1320", "1310", "1300"):
         rig.fetcher.responses[zug(f"2026/11/17/{minute}")] = FetchError("answered 502", status=502)
-    save_state(rig.paths.state_file, State(offsets={"zug": 9}))
+    save_state(rig.paths.state_file, State(offset=9))
     rig.app.use("zug")
     assert len(rig.urls()) == 7
     assert "no frame" in rig.state.last_error and "502" in rig.state.last_error
 
 
 def test_network_failure_stops_after_one_try(rig):
-    save_state(rig.paths.state_file, State(offsets={"zug": 9}))
+    save_state(rig.paths.state_file, State(offset=9))
     rig.fetcher.responses[zug("2026/11/17/1400")] = FetchError("could not reach www.foto-webcam.eu")
     rig.app.use("zug")
     assert len(rig.urls()) == 1 and "could not reach" in rig.state.last_error
@@ -503,16 +503,16 @@ def test_a_frame_that_cannot_be_stamped_is_not_shown(tmp_path):
 
 # ---- cams that were renamed between versions ---------------------------------
 
-def test_a_renamed_cam_and_its_offset_carry_over(rig):
+def test_a_renamed_cam_carries_over(rig):
     rig.cams.update({c.id: c for c in parse_cams([
         {"id": "alps-funtenseetauern", "name": "Königssee", "kind": "foto-webcam",
          "url": "https://www.foto-webcam.eu", "cam": "funtenseetauern"}])})
     rig.fetcher.responses["https://www.foto-webcam.eu/webcam/funtenseetauern/2026/11/17/1400_uh.jpg"] = \
         Fetched("ok", JPEG, None)
-    save_state(rig.paths.state_file, State(on=True, cam="alps-koenigssee", offsets={"alps-koenigssee": 9},
+    save_state(rig.paths.state_file, State(on=True, cam="alps-koenigssee", offset=9,
                                            saved={"picture-uri": "file:///photo.jpg"}))
     rig.app.refresh()
-    assert rig.state.cam == "alps-funtenseetauern" and rig.state.offsets == {"alps-funtenseetauern": 9}
+    assert rig.state.cam == "alps-funtenseetauern" and rig.state.offset == 9
     assert rig.state.last_error is None and rig.state.shown_key == "2026/11/17/1400"
     assert "Cam: Königssee (alps-funtenseetauern)" in rig.app.status()
 
@@ -528,29 +528,34 @@ def test_an_old_name_is_left_alone_if_it_still_exists(rig):
 def test_use_with_an_offset_sets_both_at_once(tmp_path):
     rig = Rig(tmp_path)
     assert rig.app.use("zug", 9) is None
-    assert rig.state.cam == "zug" and rig.state.offsets == {"zug": 9}
+    assert rig.state.cam == "zug" and rig.state.offset == 9
     assert rig.state.shown_key == "2026/11/17/1400"
-    assert rig.app.offset_of("zug") == 9
+    assert rig.app.offset() == 9
 
 
-def test_use_without_an_offset_keeps_the_one_the_cam_had(tmp_path):
+def test_the_offset_is_one_setting_that_changing_cams_leaves_alone(tmp_path):
+    rig = Rig(tmp_path)
+    rig.cams.update({c.id: c for c in parse_cams([
+        {"id": "other", "name": "O", "kind": "foto-webcam", "url": "https://www.foto-webcam.eu", "cam": "other"}])})
+    rig.fetcher.responses["https://www.foto-webcam.eu/webcam/other/2026/11/17/1400_uh.jpg"] = Fetched("ok", JPEG, None)
+    rig.app.use("zug", 9)
+    rig.app.use("other")
+    assert rig.state.offset == 9 and rig.state.shown_key == "2026/11/17/1400"
+    assert "Offset: 9 hours behind" in rig.app.status()
+
+
+def test_a_cam_with_no_archive_is_shown_live_and_the_offset_waits_for_the_next_cam(tmp_path):
     rig = Rig(tmp_path)
     rig.app.use("zug", 9)
-    rig.app.use("a")
+    assert rig.app.use("a") is None
+    assert rig.state.offset == 9 and rig.app.current()[1] == 0 and "Offset: live" in rig.app.status()
+    assert rig.app.use("a", 5) is None and rig.state.offset == 5
     rig.app.use("zug")
-    assert rig.state.offsets == {"zug": 9}
+    assert rig.app.current()[1] == 5
 
 
 def test_use_refuses_a_bad_offset_and_changes_nothing(tmp_path):
     rig = Rig(tmp_path)
     with pytest.raises(UserError, match="0 to 23"):
         rig.app.use("zug", 24)
-    with pytest.raises(UserError, match="no archive"):
-        rig.app.use("a", 3)
     assert rig.state.on is False and rig.desktop.values["picture-uri"] == "file:///photo.jpg"
-    assert rig.app.use("a", 0) is None and rig.state.offsets == {}
-
-
-def test_offset_of_is_zero_for_a_cam_never_set_or_without_an_archive(tmp_path):
-    rig = Rig(tmp_path)
-    assert rig.app.offset_of("zug") == 0 and rig.app.offset_of("a") == 0 and rig.app.offset_of("nope") == 0

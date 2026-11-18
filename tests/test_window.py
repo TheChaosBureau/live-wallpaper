@@ -39,7 +39,7 @@ def jpeg() -> bytes:
 
 class FakeApp:
     def __init__(self):
-        self.cam, self.offsets, self.used, self.off_calls = None, {"zug": 3}, [], 0
+        self.cam, self.hours, self.used, self.off_calls = None, 3, [], 0
         self.problem = None
 
     def list_cams(self):
@@ -48,8 +48,8 @@ class FakeApp:
     def current(self):
         return self.cam, 0
 
-    def offset_of(self, cam_id):
-        return self.offsets.get(cam_id, 0)
+    def offset(self):
+        return self.hours
 
     def local_time(self, when):
         return when.strftime("%Y-%m-%d %H:%M")
@@ -111,7 +111,7 @@ def test_it_opens_on_the_first_cam_with_its_preview_and_changes_nothing(rig):
     assert app.used == []
 
 
-def test_clicking_a_cam_previews_it_at_the_offset_it_last_had(rig):
+def test_clicking_a_cam_previews_it_at_the_offset(rig):
     app, previewer, win = rig
     select(win, "zug")
     assert previewer.calls[-1] == ("zug", 3)
@@ -145,7 +145,8 @@ def test_set_as_wallpaper_applies_cam_and_offset_and_the_window_stays(rig):
     select(win, "a")
     win.set_button.emit("clicked")
     pump(lambda: len(app.used) == 2 and win.set_button.get_sensitive())
-    assert app.used[-1] == ("a", None)
+    assert app.used[-1] == ("a", 9)
+    assert win.status_label.get_label() == "Wallpaper set: Cam A"
     assert win._marks["a"].get_visible() and not win._marks["zug"].get_visible()
 
 
@@ -194,3 +195,16 @@ def test_it_opens_on_the_cam_that_is_the_wallpaper(monkeypatch):
     pump(lambda: not win.spinner.get_spinning())
     assert win.title_label.get_label() == "Zugspitze" and win._marks["zug"].get_visible()
     win.destroy()
+
+
+def test_the_offset_stays_where_the_user_put_it_when_the_cam_changes(rig):
+    app, previewer, win = rig
+    select(win, "zug")
+    win.scale.set_value(7)
+    pump(lambda: previewer.calls[-1] == ("zug", 7) and not win.spinner.get_spinning())
+    select(win, "a")
+    assert win.hours == 7 and not win.scale.get_sensitive()
+    assert win.hours_label.get_label() == "Live only (no archive)"
+    select(win, "zug")
+    assert previewer.calls[-1] == ("zug", 7)
+    assert win.hours == 7 and win.hours_label.get_label() == "7 hours behind live"

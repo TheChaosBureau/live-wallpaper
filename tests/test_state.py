@@ -11,7 +11,7 @@ def test_missing_file_is_default(tmp_path):
 
 
 @pytest.mark.parametrize("content", [
-    "", "{", "[]", '{"on": "yes", "offsets": 3}', '{"offsets": {"zug": "nine"}}',
+    "", "{", "[]", '{"on": "yes", "offsets": 3}', '{"offsets": {"zug": "nine"}}', '{"offset": "nine"}', '{"offset": true}',
     '{"saved": {"picture-uri": 3}}', '{"cam": 7}', "\x00\x00\x00",
 ])
 def test_bad_file_is_default(tmp_path, content):
@@ -28,7 +28,7 @@ def test_unknown_fields_are_ignored(tmp_path):
 
 def test_round_trip_creates_directory(tmp_path):
     p = tmp_path / "deep" / "state.json"
-    s = State(on=True, cam="zug", offsets={"zug": 9}, saved={"picture-uri": "file:///a.jpg"},
+    s = State(on=True, cam="zug", offset=9, saved={"picture-uri": "file:///a.jpg"},
               shown_key="k", shown_path="/x.jpg", frame_time="2026-11-17T13:00:00+00:00",
               fetched_at="2026-11-17T22:03:00+00:00", validator="v", last_error="e")
     save_state(p, s)
@@ -52,3 +52,13 @@ def test_paths_from_env():
 def test_paths_defaults():
     p = Paths.from_env({"HOME": "/h", "XDG_STATE_HOME": ""})
     assert p.state_file == Path("/h/.local/state/live-wallpaper/state.json")
+
+
+def test_a_state_file_from_before_the_single_offset_keeps_the_chosen_cams_offset(tmp_path):
+    p = tmp_path / "state.json"
+    p.write_text('{"on": true, "cam": "zug", "offsets": {"zug": 13, "other": 4}}')
+    assert load_state(p) == State(on=True, cam="zug", offset=13)
+    p.write_text('{"on": true, "cam": "a", "offsets": {"zug": 13}}')
+    assert load_state(p) == State(on=True, cam="a", offset=0)
+    p.write_text('{"cam": "zug", "offset": 2, "offsets": {"zug": 13}}')
+    assert load_state(p) == State(cam="zug", offset=2)
